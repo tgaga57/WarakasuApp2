@@ -25,14 +25,14 @@
                                 <rect key="frame" x="0.0" y="11" width="200" height="200"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="YOUR EMAIL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3dU-uc-jb5">
-                                        <rect key="frame" x="8" y="44" width="184" height="30"/>
+                                        <rect key="frame" x="8" y="50" width="184" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PASSWORD" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S24-ym-3Wc">
-                                        <rect key="frame" x="8" y="136" width="184" height="30"/>
+                                        <rect key="frame" x="8" y="126" width="184" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -45,8 +45,8 @@
                                     <constraint firstAttribute="width" constant="200" id="zwX-sd-s2s"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2e-1s-FTf">
-                                <rect key="frame" x="10" y="226" width="166" height="41"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2e-1s-FTf" customClass="TransitionButton" customModule="TransitionButton">
+                                <rect key="frame" x="10" y="226" width="190" height="41"/>
                                 <color key="backgroundColor" red="0.25638983653049596" green="0.42848882929244647" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
                                 <state key="normal" title="NEW MEMBER">
@@ -59,14 +59,14 @@
                                     <action selector="newMember:" destination="cem-bL-qXt" eventType="touchUpInside" id="VFb-aF-AcX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agP-wE-tKk">
-                                <rect key="frame" x="10" y="287" width="166" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agP-wE-tKk" customClass="TransitionButton" customModule="TransitionButton">
+                                <rect key="frame" x="10" y="287" width="176" height="45"/>
                                 <color key="backgroundColor" red="0.53027473316570251" green="1" blue="0.65617399423037415" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="9f0-If-mP6"/>
                                     <constraint firstAttribute="height" constant="45" id="AUP-aM-h2j"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 <state key="normal" title="SIGN IN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -81,12 +81,15 @@
                                 <rect key="frame" x="16" y="352" width="153" height="36"/>
                                 <color key="backgroundColor" red="0.94058433417746479" green="1" blue="0.9849460958063001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Button"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's  Warakasu！" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4ia-Ia-dHe">
-                                <rect key="frame" x="5" y="418" width="333" height="56"/>
+                                <rect key="frame" x="5" y="418" width="307" height="69"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="307" id="2wr-QZ-0t4"/>
+                                    <constraint firstAttribute="height" constant="69" id="NHg-xh-cjK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="43"/>
                                 <color key="textColor" red="0.19360286803713533" green="0.19360286803713533" blue="0.19360286803713533" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="highlightedColor" red="1" green="0.57062437961429224" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="shadowColor" red="0.0" green="1" blue="0.040351079375115617" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -122,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V8v-KS-Fw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-240" y="181"/>
+            <point key="canvasLocation" x="-240" y="180.63380281690141"/>
         </scene>
     </scenes>
     <resources>
