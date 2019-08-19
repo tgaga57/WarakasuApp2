@@ -25,8 +25,8 @@ class LoginViewController: UIViewController {
             return
         }
         sender.startAnimation()
-        // firebaseuthのログイン処理
-        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+        // firebaseAuthの新規登録処理
+        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if let error = error {
                 self.showErrorAlert(error: error)
                 // 認証失敗
@@ -54,7 +54,7 @@ class LoginViewController: UIViewController {
     }
     
     
-    // サインインボタン
+    // ログインボタン
     @IBAction func loginbutton(_ sender: TransitionButton) {
         //emailとパスワードにnilが入っていないかを確認
         guard let email = emailTextFiled.text, let password = passWordTextfiled.text else {
