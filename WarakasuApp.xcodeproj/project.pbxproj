@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B1197069230A38F400575571 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1197068230A38F400575571 /* AppDelegate.swift */; };
+		B119706B230A38F400575571 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B119706A230A38F400575571 /* MainViewController.swift */; };
+		B119706E230A38F400575571 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B119706C230A38F400575571 /* Main.storyboard */; };
+		B1197070230A38F400575571 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B119706F230A38F400575571 /* Assets.xcassets */; };
+		B1197073230A38F400575571 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1197071230A38F400575571 /* LaunchScreen.storyboard */; };
+		B1197080230A5DB300575571 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B119707F230A5DB200575571 /* Login.storyboard */; };
+		B1197082230A5E2A00575571 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1197081230A5E2A00575571 /* LoginViewController.swift */; };
+		B11ADDEA230A7BD800DD69B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B11ADDE9230A7BD800DD69B6 /* GoogleService-Info.plist */; };
+		CB7ECF19C90C4B43CF077249 /* Pods_WarakasuApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B357137C2A0E5D723ABE4309 /* Pods_WarakasuApp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		12FCFB7442291D5DDA4C1F7E /* Pods-WarakasuApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WarakasuApp.release.xcconfig"; path = "Target Support Files/Pods-WarakasuApp/Pods-WarakasuApp.release.xcconfig"; sourceTree = "<group>"; };
+		210BEF49D95070C8CD897C01 /* Pods-WarakasuApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WarakasuApp.debug.xcconfig"; path = "Target Support Files/Pods-WarakasuApp/Pods-WarakasuApp.debug.xcconfig"; sourceTree = "<group>"; };
+		B1197065230A38F400575571 /* WarakasuApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WarakasuApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1197068230A38F400575571 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B119706A230A38F400575571 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B119706D230A38F400575571 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B119706F230A38F400575571 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B1197072230A38F400575571 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B1197074230A38F400575571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B119707F230A5DB200575571 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		B1197081230A5E2A00575571 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B11ADDE9230A7BD800DD69B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B357137C2A0E5D723ABE4309 /* Pods_WarakasuApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WarakasuApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B1197062230A38F400575571 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB7ECF19C90C4B43CF077249 /* Pods_WarakasuApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40CB1F25AADE409BB783939D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B357137C2A0E5D723ABE4309 /* Pods_WarakasuApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4278B9C4F470D8B9DA0A1C69 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				210BEF49D95070C8CD897C01 /* Pods-WarakasuApp.debug.xcconfig */,
+				12FCFB7442291D5DDA4C1F7E /* Pods-WarakasuApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B119705C230A38F400575571 = {
+			isa = PBXGroup;
+			children = (
+				B1197067230A38F400575571 /* WarakasuApp */,
+				B1197066230A38F400575571 /* Products */,
+				4278B9C4F470D8B9DA0A1C69 /* Pods */,
+				40CB1F25AADE409BB783939D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B1197066230A38F400575571 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B1197065230A38F400575571 /* WarakasuApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B1197067230A38F400575571 /* WarakasuApp */ = {
+			isa = PBXGroup;
+			children = (
+				B1197068230A38F400575571 /* AppDelegate.swift */,
+				B119707C230A5CAA00575571 /* Login */,
+				B11ADDEB230A89F900DD69B6 /* Main */,
+				B119706F230A38F400575571 /* Assets.xcassets */,
+				B1197071230A38F400575571 /* LaunchScreen.storyboard */,
+				B1197074230A38F400575571 /* Info.plist */,
+				B11ADDE9230A7BD800DD69B6 /* GoogleService-Info.plist */,
+			);
+			path = WarakasuApp;
+			sourceTree = "<group>";
+		};
+		B119707C230A5CAA00575571 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B119707F230A5DB200575571 /* Login.storyboard */,
+				B1197081230A5E2A00575571 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B11ADDEB230A89F900DD69B6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B119706C230A38F400575571 /* Main.storyboard */,
+				B119706A230A38F400575571 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B1197064230A38F400575571 /* WarakasuApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1197077230A38F400575571 /* Build configuration list for PBXNativeTarget "WarakasuApp" */;
+			buildPhases = (
+				17FFBCD6AE18C562910FDD6B /* [CP] Check Pods Manifest.lock */,
+				B1197061230A38F400575571 /* Sources */,
+				B1197062230A38F400575571 /* Frameworks */,
+				B1197063230A38F400575571 /* Resources */,
+				47480070CEF74639C1962DF9 /* [CP] Embed Pods Frameworks */,
+				DD6560849B6157A2E0AD7798 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WarakasuApp;
+			productName = WarakasuApp;
+			productReference = B1197065230A38F400575571 /* WarakasuApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B119705D230A38F400575571 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = Taigashiga;
+				TargetAttributes = {
+					B1197064230A38F400575571 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = B1197060230A38F400575571 /* Build configuration list for PBXProject "WarakasuApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B119705C230A38F400575571;
+			productRefGroup = B1197066230A38F400575571 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B1197064230A38F400575571 /* WarakasuApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B1197063230A38F400575571 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1197073230A38F400575571 /* LaunchScreen.storyboard in Resources */,
+				B1197080230A5DB300575571 /* Login.storyboard in Resources */,
+				B11ADDEA230A7BD800DD69B6 /* GoogleService-Info.plist in Resources */,
+				B1197070230A38F400575571 /* Assets.xcassets in Resources */,
+				B119706E230A38F400575571 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17FFBCD6AE18C562910FDD6B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WarakasuApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47480070CEF74639C1962DF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WarakasuApp/Pods-WarakasuApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WarakasuApp/Pods-WarakasuApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WarakasuApp/Pods-WarakasuApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD6560849B6157A2E0AD7798 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WarakasuApp/Pods-WarakasuApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WarakasuApp/Pods-WarakasuApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WarakasuApp/Pods-WarakasuApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B1197061230A38F400575571 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1197082230A5E2A00575571 /* LoginViewController.swift in Sources */,
+				B119706B230A38F400575571 /* MainViewController.swift in Sources */,
+				B1197069230A38F400575571 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B119706C230A38F400575571 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B119706D230A38F400575571 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B1197071230A38F400575571 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B1197072230A38F400575571 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B1197075230A38F400575571 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B1197076230A38F400575571 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B1197078230A38F400575571 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 210BEF49D95070C8CD897C01 /* Pods-WarakasuApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WarakasuApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = project.WarakasuApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B1197079230A38F400575571 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12FCFB7442291D5DDA4C1F7E /* Pods-WarakasuApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WarakasuApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = project.WarakasuApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B1197060230A38F400575571 /* Build configuration list for PBXProject "WarakasuApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1197075230A38F400575571 /* Debug */,
+				B1197076230A38F400575571 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1197077230A38F400575571 /* Build configuration list for PBXNativeTarget "WarakasuApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1197078230A38F400575571 /* Debug */,
+				B1197079230A38F400575571 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B119705D230A38F400575571 /* Project object */;
+}
