@@ -7,11 +7,13 @@
 //
 
 import UIKit
+//import XLPagerTabStrip
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController{
     
-    
-
+//    // タブのタイトル
+//    var itemInfo: [IndicatorInfo] = ["タイムライン","Warakasu","設定"]
+//
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

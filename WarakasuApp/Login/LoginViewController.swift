@@ -9,14 +9,26 @@
 import UIKit
 import TransitionButton
 import FirebaseAuth
+import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
     // メールアドレス
     @IBOutlet weak var emailTextFiled: UITextField!
+    // グーグルサインイン
+    // 後で書きます
     
+   
     // パスワード
     @IBOutlet weak var passWordTextfiled: UITextField!
+    
+    // ビュー コントローラで、viewDidLoad メソッドをオーバーライドして GIDSignInオブジェクトの UI デリゲートを設定します
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().signIn()
+    }
     
     // 新規登録ボタン
     @IBAction func newMember(_ sender: TransitionButton) {
@@ -53,10 +65,9 @@ class LoginViewController: UIViewController {
         })
     }
     
-    
     // ログインボタン
     @IBAction func loginbutton(_ sender: TransitionButton) {
-        //emailとパスワードにnilが入っていないかを確認
+        // emailとパスワードにnilが入っていないかを確認
         guard let email = emailTextFiled.text, let password = passWordTextfiled.text else {
             return
         }
@@ -83,7 +94,7 @@ class LoginViewController: UIViewController {
                             // 成功
                             print("ログイン成功")
                             UserDefaults.standard.set("check", forKey: "set")
-                             // タイムラインへ遷移
+                            // タイムラインへ遷移
                             self.toTimeLine()
                         })
                     })
@@ -92,6 +103,8 @@ class LoginViewController: UIViewController {
         })
     }
     
+    
+    // タイムラインへの関数
     func toTimeLine() {
         // storyboardのfileの特定
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -100,6 +113,7 @@ class LoginViewController: UIViewController {
         // 遷移処理
         self.present(vc, animated: true)
     }
+    
     
     // エラーが返ってきた場合のアラート
     func showErrorAlert(error: Error?)  {
@@ -119,8 +133,25 @@ class LoginViewController: UIViewController {
             emailTextFiled.resignFirstResponder()
         } // パスワードも閉じます
         if passWordTextfiled.isFirstResponder {
-          passWordTextfiled.resignFirstResponder()
+            passWordTextfiled.resignFirstResponder()
         }
     }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        if let _ = error {
+            return
+        }
+        
+        guard let authentication = user.authentication else { return }
+        _ = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+//        Auth.auth().signIn(with: credential) { (authResult, error) in
+//            if let error = error {
+//                // ...
+//                return
+//            }
+//            print("**success")
+//        }
     }
+}
 

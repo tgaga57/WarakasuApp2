@@ -13,5 +13,5 @@ target 'WarakasuApp' do
   pod 'XLPagerTabStrip'
   pod 'FirebaseUI/Phone'
   pod 'FirebaseUI/Google'
-
+  pod 'GoogleSignIn'
 end
