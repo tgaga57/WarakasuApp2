@@ -7,18 +7,30 @@
 //
 
 import UIKit
-//import XLPagerTabStrip
+import XLPagerTabStrip
 
-class MainViewController: UIViewController{
-    
-//    // タブのタイトル
-//    var itemInfo: [IndicatorInfo] = ["タイムライン","Warakasu","設定"]
-//
+class MainViewController: BarPagerTabStripViewController{
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+        // 管理されるviewCintrollerを返す処理
+        // タイムライン
+        let TimeLineVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TimeLine")
+        //  投稿
+         let PostVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Post")
+        // 検索
+        let SearchVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Search")
+        // 自分のプロフィール
+         let ProfVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Profile")
+        
+        // childViewControllersを配列でVCを入れる
+        let childViewControllers:[UIViewController] = [TimeLineVC, PostVC, SearchVC, ProfVC]
+        
+        return childViewControllers
+    }
     
 }
 

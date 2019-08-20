@@ -11,19 +11,19 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="lzj-8M-LUe">
+        <scene sceneID="pLk-xW-H1e">
             <objects>
-                <viewController storyboardIdentifier="Post " id="Xjh-pK-whg" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="C6U-Sk-caC">
+                <viewController storyboardIdentifier="Profile" id="V96-Yf-4y2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tGK-O5-FX9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                        <viewLayoutGuide key="safeArea" id="FDv-U0-Hly"/>
+                        <color key="backgroundColor" red="1" green="0.57062437960000001" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="koF-nn-aUj"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IaJ-f5-wLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="krr-aV-hAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="213" y="-312"/>
+            <point key="canvasLocation" x="393" y="-307"/>
         </scene>
     </scenes>
 </document>

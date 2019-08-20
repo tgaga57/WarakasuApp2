@@ -16,9 +16,13 @@
 		B1197082230A5E2A00575571 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1197081230A5E2A00575571 /* LoginViewController.swift */; };
 		B11ADDEA230A7BD800DD69B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B11ADDE9230A7BD800DD69B6 /* GoogleService-Info.plist */; };
 		B19BCC33230C00B300BA367C /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B19BCC32230C00B300BA367C /* Post.storyboard */; };
-		B19BCC35230C00F500BA367C /* postViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BCC34230C00F500BA367C /* postViewController.swift */; };
+		B19BCC35230C00F500BA367C /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BCC34230C00F500BA367C /* PostViewController.swift */; };
 		B19BCC38230C017C00BA367C /* profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B19BCC37230C017C00BA367C /* profile.storyboard */; };
-		B19BCC3A230C019700BA367C /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BCC39230C019700BA367C /* profileViewController.swift */; };
+		B19BCC3A230C019700BA367C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BCC39230C019700BA367C /* ProfileViewController.swift */; };
+		B19BCC3D230C3F8700BA367C /* TImeLine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B19BCC3C230C3F8700BA367C /* TImeLine.storyboard */; };
+		B19BCC3F230C3FE900BA367C /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BCC3E230C3FE900BA367C /* TimeLineViewController.swift */; };
+		B19BCC43230C40AE00BA367C /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B19BCC42230C40AE00BA367C /* Search.storyboard */; };
+		B19BCC45230C40C000BA367C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BCC44230C40C000BA367C /* SearchViewController.swift */; };
 		CB7ECF19C90C4B43CF077249 /* Pods_WarakasuApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B357137C2A0E5D723ABE4309 /* Pods_WarakasuApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,9 +40,13 @@
 		B1197081230A5E2A00575571 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B11ADDE9230A7BD800DD69B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B19BCC32230C00B300BA367C /* Post.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
-		B19BCC34230C00F500BA367C /* postViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postViewController.swift; sourceTree = "<group>"; };
+		B19BCC34230C00F500BA367C /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		B19BCC37230C017C00BA367C /* profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = profile.storyboard; sourceTree = "<group>"; };
-		B19BCC39230C019700BA367C /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
+		B19BCC39230C019700BA367C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B19BCC3C230C3F8700BA367C /* TImeLine.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TImeLine.storyboard; sourceTree = "<group>"; };
+		B19BCC3E230C3FE900BA367C /* TimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
+		B19BCC42230C40AE00BA367C /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		B19BCC44230C40C000BA367C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B357137C2A0E5D723ABE4309 /* Pods_WarakasuApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WarakasuApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -95,8 +103,10 @@
 				B1197068230A38F400575571 /* AppDelegate.swift */,
 				B119707C230A5CAA00575571 /* Login */,
 				B11ADDEB230A89F900DD69B6 /* Main */,
+				B19BCC3B230C3F3F00BA367C /* TimeLine */,
 				B19BCC31230C009100BA367C /* post */,
-				B19BCC36230C014200BA367C /* profile */,
+				B19BCC40230C407500BA367C /* Search */,
+				B19BCC36230C014200BA367C /* Profile */,
 				B119706F230A38F400575571 /* Assets.xcassets */,
 				B1197071230A38F400575571 /* LaunchScreen.storyboard */,
 				B1197074230A38F400575571 /* Info.plist */,
@@ -127,18 +137,36 @@
 			isa = PBXGroup;
 			children = (
 				B19BCC32230C00B300BA367C /* Post.storyboard */,
-				B19BCC34230C00F500BA367C /* postViewController.swift */,
+				B19BCC34230C00F500BA367C /* PostViewController.swift */,
 			);
 			path = post;
 			sourceTree = "<group>";
 		};
-		B19BCC36230C014200BA367C /* profile */ = {
+		B19BCC36230C014200BA367C /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				B19BCC37230C017C00BA367C /* profile.storyboard */,
-				B19BCC39230C019700BA367C /* profileViewController.swift */,
+				B19BCC39230C019700BA367C /* ProfileViewController.swift */,
 			);
-			path = profile;
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		B19BCC3B230C3F3F00BA367C /* TimeLine */ = {
+			isa = PBXGroup;
+			children = (
+				B19BCC3C230C3F8700BA367C /* TImeLine.storyboard */,
+				B19BCC3E230C3FE900BA367C /* TimeLineViewController.swift */,
+			);
+			path = TimeLine;
+			sourceTree = "<group>";
+		};
+		B19BCC40230C407500BA367C /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B19BCC42230C40AE00BA367C /* Search.storyboard */,
+				B19BCC44230C40C000BA367C /* SearchViewController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,8 +231,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B19BCC38230C017C00BA367C /* profile.storyboard in Resources */,
+				B19BCC3D230C3F8700BA367C /* TImeLine.storyboard in Resources */,
 				B1197073230A38F400575571 /* LaunchScreen.storyboard in Resources */,
 				B1197080230A5DB300575571 /* Login.storyboard in Resources */,
+				B19BCC43230C40AE00BA367C /* Search.storyboard in Resources */,
 				B11ADDEA230A7BD800DD69B6 /* GoogleService-Info.plist in Resources */,
 				B1197070230A38F400575571 /* Assets.xcassets in Resources */,
 				B19BCC33230C00B300BA367C /* Post.storyboard in Resources */,
@@ -278,10 +308,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B19BCC35230C00F500BA367C /* postViewController.swift in Sources */,
+				B19BCC35230C00F500BA367C /* PostViewController.swift in Sources */,
+				B19BCC45230C40C000BA367C /* SearchViewController.swift in Sources */,
 				B1197082230A5E2A00575571 /* LoginViewController.swift in Sources */,
 				B119706B230A38F400575571 /* MainViewController.swift in Sources */,
-				B19BCC3A230C019700BA367C /* profileViewController.swift in Sources */,
+				B19BCC3A230C019700BA367C /* ProfileViewController.swift in Sources */,
+				B19BCC3F230C3FE900BA367C /* TimeLineViewController.swift in Sources */,
 				B1197069230A38F400575571 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
