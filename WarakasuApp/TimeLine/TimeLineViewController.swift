@@ -13,7 +13,6 @@ class TimeLineViewController: UIViewController, IndicatorInfoProvider{
 
     var itemInfo: IndicatorInfo = "笑イン"
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

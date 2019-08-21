@@ -10,20 +10,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="CZQ-pL-gTb">
+        <!--Post Content View Controller-->
+        <scene sceneID="VZY-aY-ZYm">
             <objects>
-                <viewController storyboardIdentifier="TimeLine" id="xx5-dD-rwj" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4e1-0E-h1O">
+                <viewController storyboardIdentifier="PostContent" id="Nhs-GL-K7X" customClass="PostContentViewController" customModule="WarakasuApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="flO-eB-P2T">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.001550789251" green="1" blue="0.18973540150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <viewLayoutGuide key="safeArea" id="3qG-Hg-8wG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Muu-2Y-IBw"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DuS-ch-cVf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eBz-dk-evu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="61" y="12"/>
+            <point key="canvasLocation" x="20" y="113"/>
         </scene>
     </scenes>
 </document>

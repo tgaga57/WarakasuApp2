@@ -9,7 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 
-class MainViewController: BarPagerTabStripViewController{
+class MainViewController: ButtonBarPagerTabStripViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,13 +18,13 @@ class MainViewController: BarPagerTabStripViewController{
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         // 管理されるviewCintrollerを返す処理
         // タイムライン
-        let TimeLineVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TimeLine")
+        let TimeLineVC = UIStoryboard(name: "TimeLine", bundle: nil).instantiateViewController(withIdentifier: "TimeLine")
         //  投稿
-         let PostVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Post")
+        let PostVC = UIStoryboard(name: "PostContent", bundle: nil).instantiateViewController(withIdentifier: "PostContent")
         // 検索
-        let SearchVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Search")
+        let SearchVC = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "Search")
         // 自分のプロフィール
-         let ProfVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Profile")
+         let ProfVC = UIStoryboard(name: "profile", bundle: nil).instantiateViewController(withIdentifier: "Profile")
         
         // childViewControllersを配列でVCを入れる
         let childViewControllers:[UIViewController] = [TimeLineVC, PostVC, SearchVC, ProfVC]

@@ -18,7 +18,6 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     // グーグルサインイン
     // 後で書きます
     
-   
     // パスワード
     @IBOutlet weak var passWordTextfiled: UITextField!
     
@@ -103,7 +102,6 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         })
     }
     
-    
     // タイムラインへの関数
     func toTimeLine() {
         // storyboardのfileの特定
@@ -113,7 +111,6 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         // 遷移処理
         self.present(vc, animated: true)
     }
-    
     
     // エラーが返ってきた場合のアラート
     func showErrorAlert(error: Error?)  {

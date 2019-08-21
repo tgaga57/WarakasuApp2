@@ -1,21 +1,23 @@
 //
-//  postViewController.swift
+//  PostContentViewController.swift
 //  WarakasuApp
 //
-//  Created by 志賀大河 on 2019/08/20.
+//  Created by 志賀大河 on 2019/08/21.
 //  Copyright © 2019 Taigashiga. All rights reserved.
 //
 
 import UIKit
 import XLPagerTabStrip
 
-class PostViewController: UIViewController, IndicatorInfoProvider{
+class PostContentViewController: UIViewController, IndicatorInfoProvider {
 
-var itemInfo: IndicatorInfo = "Warakasu"
+
+    var itemInfo: IndicatorInfo = "Warakasu"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -24,5 +26,6 @@ var itemInfo: IndicatorInfo = "Warakasu"
         
         return itemInfo
     }
-  
+
+
 }
