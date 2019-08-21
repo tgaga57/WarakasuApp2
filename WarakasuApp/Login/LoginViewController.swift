@@ -9,9 +9,8 @@
 import UIKit
 import TransitionButton
 import FirebaseAuth
-import GoogleSignIn
 
-class LoginViewController: UIViewController, GIDSignInUIDelegate {
+class LoginViewController: UIViewController {
     
     // メールアドレス
     @IBOutlet weak var emailTextFiled: UITextField!
@@ -25,8 +24,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().signIn()
+        
     }
     
     // 新規登録ボタン
@@ -134,21 +132,6 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         }
     }
     
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        if let _ = error {
-            return
-        }
-        
-        guard let authentication = user.authentication else { return }
-        _ = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                       accessToken: authentication.accessToken)
-//        Auth.auth().signIn(with: credential) { (authResult, error) in
-//            if let error = error {
-//                // ...
-//                return
-//            }
-//            print("**success")
-//        }
-    }
+
 }
 
