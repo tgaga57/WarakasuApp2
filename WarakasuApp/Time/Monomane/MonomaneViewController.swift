@@ -1,18 +1,18 @@
 //
-//  profileViewController.swift
+//  MonomaneViewController.swift
 //  WarakasuApp
 //
-//  Created by 志賀大河 on 2019/08/20.
+//  Created by 志賀大河 on 2019/08/23.
 //  Copyright © 2019 Taigashiga. All rights reserved.
 //
 
 import UIKit
 import XLPagerTabStrip
 
-class ProfileViewController: UIViewController, IndicatorInfoProvider{
+class MonomaneViewController: UIViewController,IndicatorInfoProvider{
+    // タブ名
+    var itemInfo: IndicatorInfo = "モノマネ"
 
-    var itemInfo: IndicatorInfo = "プロフィール"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,5 +24,4 @@ class ProfileViewController: UIViewController, IndicatorInfoProvider{
         
         return itemInfo
     }
-
 }

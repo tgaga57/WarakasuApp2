@@ -130,6 +130,7 @@ PODS:
   - gRPC-Core/Interface (1.21.0)
   - GTMSessionFetcher/Core (1.2.2)
   - leveldb-library (1.20)
+  - LTMorphingLabel (0.7.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -146,6 +147,7 @@ DEPENDENCIES:
   - FirebaseUI/Google
   - FirebaseUI/Phone
   - GoogleSignIn
+  - LTMorphingLabel
   - TransitionButton
   - XLPagerTabStrip
 
@@ -172,6 +174,7 @@ SPEC REPOS:
     - gRPC-Core
     - GTMSessionFetcher
     - leveldb-library
+    - LTMorphingLabel
     - nanopb
     - Protobuf
     - TransitionButton
@@ -199,11 +202,12 @@ SPEC CHECKSUMS:
   gRPC-Core: c9aef9a261a1247e881b18059b84d597293c9947
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  LTMorphingLabel: 22147fb1ec2b0306537ccc348b36ea8617179b03
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1097ca58584c8d9be81bfbf2c5ff5975648dd87a
   TransitionButton: fb271583d9c9e4bb116b97103047e5157653f233
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: 96232b7dd3586f106509efcf4d5acadaefdcebeb
+PODFILE CHECKSUM: d5c74fd5100dc08046f3e805c8117c7362688b0d
 
 COCOAPODS: 1.7.5

@@ -9,6 +9,7 @@
 import UIKit
 import TransitionButton
 import FirebaseAuth
+import LTMorphingLabel
 
 class LoginViewController: UIViewController {
     
@@ -19,13 +20,51 @@ class LoginViewController: UIViewController {
     
     // パスワード
     @IBOutlet weak var passWordTextfiled: UITextField!
+   
+    // 上位部分のラベル
+    @IBOutlet weak var warakasuLabel: LTMorphingLabel!
+  
+    //表示制御用タイマー
+    private var timer: Timer?
+    //String配列のindex用
+    private var index: Int = 0
+    //表示するString配列
+    private let textList = ["If you wanna get 笑い","Let's Warakasu"]
     
-    // ビュー コントローラで、viewDidLoad メソッドをオーバーライドして GIDSignInオブジェクトの UI デリゲートを設定します
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // エフェクト定義
+        warakasuLabel.morphingEffect = .evaporate
+        warakasuLabel.text = "aaaaa"
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //タイマーの追加
+        timer = Timer.scheduledTimer(timeInterval: 3.0,
+                                     target: self,
+                                     selector: #selector(update(timer:)), userInfo: nil,
+                                     repeats: true)
+        timer?.fire()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        timer?.invalidate()
+    }
+    
+    @objc func update(timer: Timer) {
+        //ここでtextの更新
+        warakasuLabel.text = textList[index]
+        
+        index += 1
+        if index >= textList.count {
+            index = 0
+        }
+    }
+    
     
     // 新規登録ボタン
     @IBAction func newMember(_ sender: TransitionButton) {
@@ -103,9 +142,9 @@ class LoginViewController: UIViewController {
     // タイムラインへの関数
     func toTimeLine() {
         // storyboardのfileの特定
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard: UIStoryboard = UIStoryboard(name: "TabMake", bundle: nil)
         // 移動先のvcをインスタンス化
-        let vc = storyboard.instantiateViewController(withIdentifier: "Main")
+        let vc = storyboard.instantiateViewController(withIdentifier: "Tab")
         // 遷移処理
         self.present(vc, animated: true)
     }

@@ -21,14 +21,17 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="publicdomainq-0021034feq" translatesAutoresizingMaskIntoConstraints="NO" id="eLX-VF-ung">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's  Warakasu！" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4ia-Ia-dHe">
-                                <rect key="frame" x="0.0" y="70" width="320" height="51"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ia-Ia-dHe" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                <rect key="frame" x="0.0" y="33" width="320" height="88"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <color key="textColor" red="0.19360286803713533" green="0.19360286803713533" blue="0.19360286803713533" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="JQe-vs-yCV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
+                                <color key="textColor" red="0.099227398523985211" green="0.099227398523985211" blue="0.099227398523985211" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="highlightedColor" red="0.0008235570984" green="0.63291227230000002" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="shadowColor" red="0.0" green="1" blue="0.040351079375115617" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <size key="shadowOffset" width="4" height="3"/>
+                                <size key="shadowOffset" width="2" height="3"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
                                 </userDefinedRuntimeAttributes>
@@ -97,7 +100,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4ia-Ia-dHe" firstAttribute="trailing" secondItem="SID-XL-5xv" secondAttribute="trailing" id="4Lh-Ab-tfC"/>
-                            <constraint firstItem="4ia-Ia-dHe" firstAttribute="top" secondItem="SID-XL-5xv" secondAttribute="top" constant="50" id="9kH-mJ-aWb"/>
                             <constraint firstItem="SID-XL-5xv" firstAttribute="trailing" secondItem="a2e-1s-FTf" secondAttribute="trailing" constant="10" id="JL8-uI-5Dv"/>
                             <constraint firstAttribute="trailing" secondItem="eLX-VF-ung" secondAttribute="trailing" id="LEN-17-qMF"/>
                             <constraint firstItem="eLX-VF-ung" firstAttribute="leading" secondItem="guq-dE-JbD" secondAttribute="leading" id="Nvt-pF-fbv"/>
@@ -105,6 +107,7 @@
                             <constraint firstItem="kle-1B-Z1o" firstAttribute="top" secondItem="4ia-Ia-dHe" secondAttribute="bottom" constant="20" id="cop-bJ-fJY"/>
                             <constraint firstItem="a2e-1s-FTf" firstAttribute="top" secondItem="agP-wE-tKk" secondAttribute="bottom" constant="18.5" id="e4i-QK-rLi"/>
                             <constraint firstItem="agP-wE-tKk" firstAttribute="top" secondItem="kle-1B-Z1o" secondAttribute="bottom" constant="25" id="egr-vV-jbo"/>
+                            <constraint firstItem="4ia-Ia-dHe" firstAttribute="top" secondItem="SID-XL-5xv" secondAttribute="top" constant="13" id="iSI-38-Tbj"/>
                             <constraint firstItem="eLX-VF-ung" firstAttribute="bottom" secondItem="SID-XL-5xv" secondAttribute="bottom" id="ln0-Ql-78p"/>
                             <constraint firstItem="eLX-VF-ung" firstAttribute="top" secondItem="guq-dE-JbD" secondAttribute="top" id="ns6-jx-Vrh"/>
                             <constraint firstItem="agP-wE-tKk" firstAttribute="leading" secondItem="SID-XL-5xv" secondAttribute="leading" constant="10" id="rE3-J4-1BB"/>
@@ -115,11 +118,12 @@
                     <connections>
                         <outlet property="emailTextFiled" destination="3dU-uc-jb5" id="UZQ-zF-70k"/>
                         <outlet property="passWordTextfiled" destination="S24-ym-3Wc" id="OJo-ak-45L"/>
+                        <outlet property="warakasuLabel" destination="4ia-Ia-dHe" id="9Og-F0-zbM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V8v-KS-Fw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-753.75" y="77.112676056338032"/>
+            <point key="canvasLocation" x="-1189" y="75"/>
         </scene>
     </scenes>
     <resources>
