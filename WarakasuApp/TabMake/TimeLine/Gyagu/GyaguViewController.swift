@@ -8,19 +8,25 @@
 
 import UIKit
 import XLPagerTabStrip
+import FirebaseFirestore
 
 class GyaguViewController: UIViewController,IndicatorInfoProvider{
+    
+    // インスタンス化
+    let db = Firestore.firestore()
+    
     // タブ名
     var itemInfo: IndicatorInfo = "一発ギャグ"
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-        // IndicatorInfoProvider のクラスの中に書かないとダメなやつ
-        func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-            
-            return itemInfo
+    
+    // IndicatorInfoProvider のクラスの中に書かないとダメなやつ
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        
+        return itemInfo
     }
 }

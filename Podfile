@@ -15,4 +15,5 @@ target 'WarakasuApp' do
   pod 'FirebaseUI/Google'
   pod 'GoogleSignIn'
   pod 'LTMorphingLabel'
+  pod 'FirebaseStorage'
 end
