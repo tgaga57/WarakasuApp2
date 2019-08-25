@@ -13,15 +13,21 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
+
     // ②初期化処理
     override init() {
         super.init()
-        FirebaseApp.configure()
+        // firebaseを使う前に宣言
+          FirebaseApp.configure()
     }
+    // アプリのデリゲートの application:didFinishLaunchingWithOptions: メソッドで、FirebaseApp オブジェクトを設定し、ログインのデリゲートを設定します。
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // Use Firebase library to conFirebaseApp.configure()
+
+        // スプラッシュ画面の表示時間
+        sleep(2)
         return true
     }
 
@@ -46,7 +52,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+  // アプリのデリゲートに application:openURL:options: メソッドを実装します。このメソッドは GIDSignIn インスタンスの handleURL メソッドを呼び出します。
 }
-

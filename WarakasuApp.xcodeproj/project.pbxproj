@@ -8,13 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		B1197069230A38F400575571 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1197068230A38F400575571 /* AppDelegate.swift */; };
-		B119706B230A38F400575571 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B119706A230A38F400575571 /* MainViewController.swift */; };
-		B119706E230A38F400575571 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B119706C230A38F400575571 /* Main.storyboard */; };
 		B1197070230A38F400575571 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B119706F230A38F400575571 /* Assets.xcassets */; };
 		B1197073230A38F400575571 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1197071230A38F400575571 /* LaunchScreen.storyboard */; };
 		B1197080230A5DB300575571 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B119707F230A5DB200575571 /* Login.storyboard */; };
 		B1197082230A5E2A00575571 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1197081230A5E2A00575571 /* LoginViewController.swift */; };
 		B11ADDEA230A7BD800DD69B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B11ADDE9230A7BD800DD69B6 /* GoogleService-Info.plist */; };
+		B11BF358230FAE370079A43A /* TabMake.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B11BF357230FAE370079A43A /* TabMake.storyboard */; };
+		B11BF35D230FC0ED0079A43A /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11BF35C230FC0ED0079A43A /* TimeLineViewController.swift */; };
+		B11BF363230FC3C60079A43A /* GyaguViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11BF362230FC3C60079A43A /* GyaguViewController.swift */; };
+		B11BF365230FC3D90079A43A /* Gyagu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B11BF364230FC3D90079A43A /* Gyagu.storyboard */; };
+		B11BF368230FC5D10079A43A /* Konto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B11BF367230FC5D10079A43A /* Konto.storyboard */; };
+		B11BF36A230FC5E70079A43A /* KontoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11BF369230FC5E70079A43A /* KontoViewController.swift */; };
+		B11BF36D230FC6DD0079A43A /* Monomane.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B11BF36C230FC6DD0079A43A /* Monomane.storyboard */; };
+		B11BF36F230FC6ED0079A43A /* MonomaneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11BF36E230FC6ED0079A43A /* MonomaneViewController.swift */; };
+		B11BF371230FCE1D0079A43A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11BF370230FCE1D0079A43A /* TabBarController.swift */; };
 		CB7ECF19C90C4B43CF077249 /* Pods_WarakasuApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B357137C2A0E5D723ABE4309 /* Pods_WarakasuApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,14 +30,21 @@
 		210BEF49D95070C8CD897C01 /* Pods-WarakasuApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WarakasuApp.debug.xcconfig"; path = "Target Support Files/Pods-WarakasuApp/Pods-WarakasuApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B1197065230A38F400575571 /* WarakasuApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WarakasuApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1197068230A38F400575571 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B119706A230A38F400575571 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		B119706D230A38F400575571 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B119706F230A38F400575571 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1197072230A38F400575571 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1197074230A38F400575571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B119707F230A5DB200575571 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		B1197081230A5E2A00575571 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B11ADDE9230A7BD800DD69B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B11BF357230FAE370079A43A /* TabMake.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabMake.storyboard; sourceTree = "<group>"; };
+		B11BF35C230FC0ED0079A43A /* TimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
+		B11BF362230FC3C60079A43A /* GyaguViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyaguViewController.swift; sourceTree = "<group>"; };
+		B11BF364230FC3D90079A43A /* Gyagu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Gyagu.storyboard; sourceTree = "<group>"; };
+		B11BF367230FC5D10079A43A /* Konto.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Konto.storyboard; sourceTree = "<group>"; };
+		B11BF369230FC5E70079A43A /* KontoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KontoViewController.swift; sourceTree = "<group>"; };
+		B11BF36C230FC6DD0079A43A /* Monomane.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Monomane.storyboard; sourceTree = "<group>"; };
+		B11BF36E230FC6ED0079A43A /* MonomaneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonomaneViewController.swift; sourceTree = "<group>"; };
+		B11BF370230FCE1D0079A43A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B357137C2A0E5D723ABE4309 /* Pods_WarakasuApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WarakasuApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,7 +100,8 @@
 			children = (
 				B1197068230A38F400575571 /* AppDelegate.swift */,
 				B119707C230A5CAA00575571 /* Login */,
-				B11ADDEB230A89F900DD69B6 /* Main */,
+				B11BF356230FADD20079A43A /* TabMake */,
+				B11BF360230FC3540079A43A /* Time */,
 				B119706F230A38F400575571 /* Assets.xcassets */,
 				B1197071230A38F400575571 /* LaunchScreen.storyboard */,
 				B1197074230A38F400575571 /* Info.plist */,
@@ -104,13 +119,51 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		B11ADDEB230A89F900DD69B6 /* Main */ = {
+		B11BF356230FADD20079A43A /* TabMake */ = {
 			isa = PBXGroup;
 			children = (
-				B119706C230A38F400575571 /* Main.storyboard */,
-				B119706A230A38F400575571 /* MainViewController.swift */,
+				B11BF357230FAE370079A43A /* TabMake.storyboard */,
+				B11BF370230FCE1D0079A43A /* TabBarController.swift */,
 			);
-			path = Main;
+			path = TabMake;
+			sourceTree = "<group>";
+		};
+		B11BF360230FC3540079A43A /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				B11BF35C230FC0ED0079A43A /* TimeLineViewController.swift */,
+				B11BF361230FC3940079A43A /* Gyagu */,
+				B11BF366230FC5960079A43A /* Konoto */,
+				B11BF36B230FC6AC0079A43A /* Monomane */,
+			);
+			path = Time;
+			sourceTree = "<group>";
+		};
+		B11BF361230FC3940079A43A /* Gyagu */ = {
+			isa = PBXGroup;
+			children = (
+				B11BF364230FC3D90079A43A /* Gyagu.storyboard */,
+				B11BF362230FC3C60079A43A /* GyaguViewController.swift */,
+			);
+			path = Gyagu;
+			sourceTree = "<group>";
+		};
+		B11BF366230FC5960079A43A /* Konoto */ = {
+			isa = PBXGroup;
+			children = (
+				B11BF367230FC5D10079A43A /* Konto.storyboard */,
+				B11BF369230FC5E70079A43A /* KontoViewController.swift */,
+			);
+			path = Konoto;
+			sourceTree = "<group>";
+		};
+		B11BF36B230FC6AC0079A43A /* Monomane */ = {
+			isa = PBXGroup;
+			children = (
+				B11BF36C230FC6DD0079A43A /* Monomane.storyboard */,
+				B11BF36E230FC6ED0079A43A /* MonomaneViewController.swift */,
+			);
+			path = Monomane;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,10 +228,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1197073230A38F400575571 /* LaunchScreen.storyboard in Resources */,
+				B11BF365230FC3D90079A43A /* Gyagu.storyboard in Resources */,
+				B11BF368230FC5D10079A43A /* Konto.storyboard in Resources */,
 				B1197080230A5DB300575571 /* Login.storyboard in Resources */,
+				B11BF358230FAE370079A43A /* TabMake.storyboard in Resources */,
+				B11BF36D230FC6DD0079A43A /* Monomane.storyboard in Resources */,
 				B11ADDEA230A7BD800DD69B6 /* GoogleService-Info.plist in Resources */,
 				B1197070230A38F400575571 /* Assets.xcassets in Resources */,
-				B119706E230A38F400575571 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,8 +304,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B11BF363230FC3C60079A43A /* GyaguViewController.swift in Sources */,
+				B11BF371230FCE1D0079A43A /* TabBarController.swift in Sources */,
+				B11BF36F230FC6ED0079A43A /* MonomaneViewController.swift in Sources */,
 				B1197082230A5E2A00575571 /* LoginViewController.swift in Sources */,
-				B119706B230A38F400575571 /* MainViewController.swift in Sources */,
+				B11BF35D230FC0ED0079A43A /* TimeLineViewController.swift in Sources */,
+				B11BF36A230FC5E70079A43A /* KontoViewController.swift in Sources */,
 				B1197069230A38F400575571 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,14 +317,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B119706C230A38F400575571 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B119706D230A38F400575571 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B1197071230A38F400575571 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
