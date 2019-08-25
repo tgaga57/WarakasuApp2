@@ -24,23 +24,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ClA-xc-pJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3289" y="-163"/>
-        </scene>
-        <!--Warakasu-->
-        <scene sceneID="f8D-du-7mm">
-            <objects>
-                <viewController storyboardIdentifier="Warakasu" id="t4t-65-8W1" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aKe-7t-EbI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="1EQ-rS-tx9"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Warakasu" id="uVB-Yd-WGn"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="54q-OS-Cau" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="879" y="1924"/>
+            <point key="canvasLocation" x="1108" y="1594"/>
         </scene>
         <!--笑イン-->
         <scene sceneID="9gX-P3-ObG">
@@ -89,7 +73,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fIu-tK-yoU"/>
                     </view>
-                    <navigationItem key="navigationItem" title="笑イン" id="D08-is-9tT"/>
+                    <navigationItem key="navigationItem" title="笑イン" id="D08-is-9tT">
+                        <barButtonItem key="rightBarButtonItem" title="投稿" id="Yob-Hb-YMI">
+                            <connections>
+                                <action selector="tappedPostButton:" destination="fbK-1i-2mJ" id="SPW-xn-3V3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="buttonBarView" destination="PY0-eH-JXZ" id="AQu-6J-Mvt"/>
                         <outlet property="containerView" destination="nr9-rx-ULB" id="Gec-2F-f2w"/>
@@ -111,14 +101,13 @@
                     <connections>
                         <segue destination="6Sr-lK-8ad" kind="relationship" relationship="viewControllers" id="K5B-GM-iKu"/>
                         <segue destination="bca-TD-LUC" kind="relationship" relationship="viewControllers" id="3iT-iK-hyB"/>
-                        <segue destination="q0U-8F-dk7" kind="relationship" relationship="viewControllers" id="kIx-OW-gtQ"/>
                         <segue destination="sVv-Cg-Q2g" kind="relationship" relationship="viewControllers" id="Jea-s3-Lt3"/>
                         <segue destination="Ifm-BD-1Sh" kind="relationship" relationship="viewControllers" id="b6o-oQ-Mpu"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D1f-hL-Zjt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-707" y="-307"/>
+            <point key="canvasLocation" x="-748" y="-552"/>
         </scene>
         <!--笑イン-->
         <scene sceneID="1To-PT-KO6">
@@ -156,42 +145,88 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z2D-I9-pHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2074" y="-162"/>
+            <point key="canvasLocation" x="1108" y="354"/>
         </scene>
         <!--Mypage-->
         <scene sceneID="PDm-jc-9Mp">
             <objects>
-                <viewController id="rRu-Mm-NoK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Likes" id="rRu-Mm-NoK" customClass="MypageViewController" customModule="WarakasuApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l5V-5I-atj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mypageを編集" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQN-vG-WSS">
+                                <rect key="frame" x="0.0" y="80" width="320" height="20.5"/>
+                                <color key="backgroundColor" red="0.39500098319999999" green="0.75364841680000005" blue="0.84142931269999999" alpha="0.87411221589999999" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ito-1p-PFH">
+                                <rect key="frame" x="58" y="120" width="204" height="187"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="204" id="7Ff-z3-RpI"/>
+                                    <constraint firstAttribute="height" constant="187" id="YSI-Xa-IpD"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="YourName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V54-gK-Q9U">
+                                <rect key="frame" x="60" y="333" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="LVX-U8-8kd"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHr-4C-Pb5">
+                                <rect key="frame" x="144.5" y="425" width="31" height="30"/>
+                                <state key="normal" title="決定"/>
+                                <connections>
+                                    <action selector="save:" destination="rRu-Mm-NoK" eventType="touchUpInside" id="mE4-pI-og6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3f-72-Neu">
+                                <rect key="frame" x="230" y="485" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ログアウト"/>
+                                <connections>
+                                    <action selector="logout:" destination="rRu-Mm-NoK" eventType="touchUpInside" id="0ko-cN-EeU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7N-0w-ZvK">
+                                <rect key="frame" x="121.5" y="383" width="77" height="30"/>
+                                <state key="normal" title="画像を編集"/>
+                                <connections>
+                                    <action selector="changeProfPhoto:" destination="rRu-Mm-NoK" eventType="touchUpInside" id="rap-Vl-m1g"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IQN-vG-WSS" firstAttribute="top" secondItem="2uL-gv-kWo" secondAttribute="top" constant="16" id="2zm-QI-Szl"/>
+                            <constraint firstItem="IQN-vG-WSS" firstAttribute="leading" secondItem="2uL-gv-kWo" secondAttribute="leading" id="6qh-4o-pJd"/>
+                            <constraint firstItem="V54-gK-Q9U" firstAttribute="top" secondItem="Ito-1p-PFH" secondAttribute="bottom" constant="26" id="KQa-Xs-dIL"/>
+                            <constraint firstItem="e7N-0w-ZvK" firstAttribute="centerX" secondItem="l5V-5I-atj" secondAttribute="centerX" id="NHk-4o-Nuh"/>
+                            <constraint firstItem="2uL-gv-kWo" firstAttribute="trailing" secondItem="IQN-vG-WSS" secondAttribute="trailing" id="ODo-Bg-KhO"/>
+                            <constraint firstItem="kHr-4C-Pb5" firstAttribute="centerX" secondItem="l5V-5I-atj" secondAttribute="centerX" id="ZBn-Wy-wBw"/>
+                            <constraint firstItem="V54-gK-Q9U" firstAttribute="centerX" secondItem="l5V-5I-atj" secondAttribute="centerX" id="a0q-Pl-N35"/>
+                            <constraint firstItem="Ito-1p-PFH" firstAttribute="centerX" secondItem="l5V-5I-atj" secondAttribute="centerX" id="o70-kE-7f4"/>
+                            <constraint firstItem="Ito-1p-PFH" firstAttribute="top" secondItem="IQN-vG-WSS" secondAttribute="bottom" constant="19.5" id="qzr-wR-Su5"/>
+                            <constraint firstItem="e7N-0w-ZvK" firstAttribute="top" secondItem="V54-gK-Q9U" secondAttribute="bottom" constant="20" id="tKX-9E-Kt3"/>
+                            <constraint firstItem="kHr-4C-Pb5" firstAttribute="top" secondItem="e7N-0w-ZvK" secondAttribute="bottom" constant="12" id="zwZ-bl-cv2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2uL-gv-kWo"/>
                     </view>
                     <navigationItem key="navigationItem" title="Mypage" id="PWE-8w-mCq"/>
+                    <connections>
+                        <outlet property="profImageView" destination="Ito-1p-PFH" id="3EV-K2-aSx"/>
+                        <outlet property="userNameText" destination="V54-gK-Q9U" id="sHf-1t-0PP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTn-D7-aX8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-998" y="1972"/>
-        </scene>
-        <!--Warakasu-->
-        <scene sceneID="o9v-qY-PIL">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q0U-8F-dk7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Warakasu" image="紙とペンのアイコン素材" id="1Ce-5z-rQ1"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Wh-jx-7Gu">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="t4t-65-8W1" kind="relationship" relationship="rootViewController" id="uC6-nb-4Uf"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5df-y5-aha" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="881" y="999"/>
+            <point key="canvasLocation" x="-748.125" y="1815.8450704225352"/>
         </scene>
         <!--Likes-->
         <scene sceneID="AJn-Vl-buo">
@@ -207,7 +242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D8l-WH-yrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3204" y="1924"/>
+            <point key="canvasLocation" x="-2604" y="1455"/>
         </scene>
         <!--Mypage-->
         <scene sceneID="K3w-vX-Z2b">
@@ -226,7 +261,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8Q-Vd-Ril" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-997.5" y="1098.5915492957747"/>
+            <point key="canvasLocation" x="-748" y="950"/>
         </scene>
         <!-- Likes-->
         <scene sceneID="S93-Ex-n6L">
@@ -245,13 +280,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yvi-oB-HT5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3204" y="1133"/>
+            <point key="canvasLocation" x="-2604" y="555"/>
         </scene>
     </scenes>
     <resources>
         <image name="イイネの手のフリーアイコン" width="32" height="32"/>
         <image name="宇宙人アイコン" width="32" height="32"/>
         <image name="笑顔の赤ちゃんイラスト2" width="32" height="32"/>
-        <image name="紙とペンのアイコン素材" width="32" height="32"/>
     </resources>
 </document>
