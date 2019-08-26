@@ -92,8 +92,8 @@
 			children = (
 				B11BF35C230FC0ED0079A43A /* TimeLineViewController.swift */,
 				B11BF361230FC3940079A43A /* Gyagu */,
-				B11BF36B230FC6AC0079A43A /* Monomane */,
 				B11BF366230FC5960079A43A /* Konto */,
+				B11BF36B230FC6AC0079A43A /* Monomane */,
 			);
 			name = TimeLine;
 			path = TabMake/TimeLine;
