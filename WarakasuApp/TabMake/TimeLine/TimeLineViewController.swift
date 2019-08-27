@@ -9,32 +9,13 @@
 import UIKit
 import XLPagerTabStrip
 import FirebaseFirestore
-import FirebaseStorage
-import AVFoundation
 
 class TimeLineViewController: ButtonBarPagerTabStripViewController{
-    
-     // Firebaseで使用するパス
-    let videoPath = "video"
-    
-    // firebase Storage
-    let storage = Storage.storage()
-    
-    // firebase Firestore
-    let db = Firestore.firestore()
-
-    // 動画情報のリスト
-    var videoList: [String] = []
-    // avプレイヤーの情報
-    var player = AVPlayer()
-    // 再生したかどうか
-    var isPlay: Bool = false
-    //自分がどのタブにいるか
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -52,14 +33,16 @@ class TimeLineViewController: ButtonBarPagerTabStripViewController{
         return childViewControllers
     }
     
-    // 投稿ボタン
+    // 投稿画面へ移動するボタン
     @IBAction func tappedPostButton(_ sender: Any) {
-//        print(self.currentIndex)
+        // print(self.currentIndex)
         // 遷移処理
         let storyboard: UIStoryboard = UIStoryboard(name: "Post", bundle: nil)
         let PostViewController = storyboard.instantiateViewController(withIdentifier: "Post") as! PostViewController
+        // タブのカテゴリーのidを渡す！　0＝一発ギャグ １＝ コント 2＝モノマネ
+        PostViewController.categoryId = currentIndex
         self.present(PostViewController, animated: true, completion: nil)
         
     }
-  
+    
 }

@@ -1,5 +1,5 @@
 //
-//  GyaguViewController.swift
+//  KontoViewController.swift
 //  WarakasuApp
 //
 //  Created by 志賀大河 on 2019/08/23.
@@ -8,30 +8,27 @@
 
 import UIKit
 import XLPagerTabStrip
-import FirebaseStorage
 import FirebaseFirestore
-import AVKit
-import AVFoundation
 
-class GyaguViewController: UIViewController,IndicatorInfoProvider,UITableViewDelegate,UITableViewDataSource{
+class KontoViewController: UIViewController,IndicatorInfoProvider,UITableViewDelegate,UITableViewDataSource{
     
     // インスタンス化
     let db = Firestore.firestore()
+    
     // 更新のぐるぐる
     let refreshControl = UIRefreshControl()
     
-    // tableview
+    // テーブルヴュー
     @IBOutlet weak var tableView: UITableView!
     
     // 投稿内容を格納する
     var items = [NSDictionary]()
     
-    // タブ名　xlpagerの名前
-    var itemInfo: IndicatorInfo = "一発ギャグ"
+    // タブ名
+    var itemInfo: IndicatorInfo = "ショートコント"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // refreshControlに文言を追加
         refreshControl.attributedTitle = NSAttributedString(string: "引っ張って更新")
         // アクションを指定
@@ -42,16 +39,13 @@ class GyaguViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
         // tableViewのデリゲート接続
         tableView.delegate = self
         tableView.dataSource = self
-        // コメント、名前、プロフィールを取得
+        
         fetch()
-        // 動画動画データ取得
-//        fetchList()
     }
-    
     // データの取得
     func fetch() {
         // getで一発ギャグのコレクションを取得
-        db.collection("Gyagu").getDocuments() {(querySnapshot, err) in
+        db.collection("Conte").getDocuments() {(querySnapshot, err) in
             // tempItemsという変数を一時的に作成
             var tempItems = [NSDictionary]()
             // for文で回し`item`に格納
@@ -88,28 +82,27 @@ class GyaguViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
     
     // セルの設定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GyaguCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ConteCell", for: indexPath)
         // 選択不可にする
         cell.selectionStyle = .none
         // itemsの中からindexpathのrow番目を取得
         let dict = items[(indexPath as NSIndexPath).row]
-     
-                // 表示情報　プロフィール情報、ユーザー名、投稿動画、コメント
+        // 表示情報　プロフィール情報　ユーザー名　投稿画像　コメント
+        
         // プロフィール画像
         let profileImageView = cell.viewWithTag(1) as! UIImageView
-        
         // 画像情報
         if let profImage = dict["profileImage"] {
-            // NSData型に変換
-            let dataProfImage = NSData(base64Encoded: profImage as! String, options: .ignoreUnknownCharacters)
-            // さらにUIImage型に変換
-            let decadedProfImage = UIImage(data: dataProfImage! as Data)
-            // profileImageViewへ代入
-            profileImageView.image = decadedProfImage
+        // NSData型に変換
+        let dataProfImage = NSData(base64Encoded: profImage as! String, options: .ignoreUnknownCharacters)
+        // さらにUIImage型に変換
+        let decadedProfImage = UIImage(data: dataProfImage! as Data)
+        // profileImageViewへ代入
+        profileImageView.image = decadedProfImage
             print ("通過しました")
         } else {
-            profileImageView.image = #imageLiteral(resourceName: "宇宙人アイコン")
-            print("nilです")
+         profileImageView.image = #imageLiteral(resourceName: "宇宙人アイコン")
+            print ("nilです")
         }
         
         // ユーザー名
@@ -127,8 +120,10 @@ class GyaguViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
         return 400
     }
     
+    
     // IndicatorInfoProvider のクラスの中に書かないとダメなやつ
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        
         return itemInfo
     }
 }

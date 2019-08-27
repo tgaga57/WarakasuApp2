@@ -75,38 +75,6 @@ class MypageViewController: UIViewController,UITextFieldDelegate, UIImagePickerC
         present(alert, animated: true)
     }
     
-    // 決定ボタン
-    @IBAction func save(_ sender: Any) {
-        
-        var data: NSData = NSData()
-        // 写真の確認
-        if let image = profImageView.image {
-            // クオリティーを下げる
-            data = image.jpegData(compressionQuality: 0.1)! as NSData
-        }
-        let base64String = data.base64EncodedString(options: .lineLength64Characters) as String
-        
-        let userName = userNameText.text
-        
-        // アプリの中に保存
-        // プロフ画像の保存
-        UserDefaults.standard.set(base64String, forKey: "profileImage")
-        // ユーザー名の保存
-        UserDefaults.standard.set(userName, forKey: "userNameText")
-    }
-    
-    // ログアウトボタン
-    @IBAction func logout(_ sender: Any) {
-        // ログアウト
-        try! Auth.auth().signOut()
-        // storyboardのfileの特定
-        let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
-        // 遷移先のvcのインスタンス化
-        let VC = storyboard.instantiateViewController(withIdentifier: "Login")
-        // 遷移処理
-        self.present(VC, animated: true)
-    }
-    
     // カメラ・フォトライブラリへの遷移処理
     func cameraAction(sourceType: UIImagePickerController.SourceType) {
         // カメラ・フォトライブラリが使用可能かチェック
@@ -128,12 +96,43 @@ class MypageViewController: UIViewController,UITextFieldDelegate, UIImagePickerC
         if let pickedImage = info[.originalImage] as? UIImage {
             // 画面サイズに合わせて
             profImageView.contentMode = .scaleToFill
-            // １　プロフ画像に反映
+            // プロフ画像に反映
             profImageView.image = pickedImage
         }
-        // ２　pickerは閉じる
         // 画像がプロフに反映される
         picker.dismiss(animated: true)
+    }
+    
+    // 決定ボタン
+    @IBAction func save(_ sender: Any) {
+        var data: NSData = NSData()
+        // 写真の確認
+        if let image = profImageView.image {
+            // クオリティーを下げる
+            data = image.jpegData(compressionQuality: 0.1)! as NSData
+        }
+        
+        let base64String = data.base64EncodedString(options: .lineLength64Characters) as String
+        
+        let userName = userNameText.text
+        
+        // アプリの中に保存
+        // プロフ画像の保存
+        UserDefaults.standard.set(base64String, forKey: "profileImage")
+        // ユーザー名の保存
+        UserDefaults.standard.set(userName, forKey: "userName")
+        }
+    
+    // ログアウトボタン
+    @IBAction func logout(_ sender: Any) {
+        // ログアウト
+        try! Auth.auth().signOut()
+        // storyboardのfileの特定
+        let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+        // 遷移先のvcのインスタンス化
+        let VC = storyboard.instantiateViewController(withIdentifier: "Login")
+        // 遷移処理
+        self.present(VC, animated: true)
     }
     
     // キーボードを閉じる処理

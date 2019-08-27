@@ -15,12 +15,8 @@ class LoginViewController: UIViewController {
     
     // メールアドレス
     @IBOutlet weak var emailTextFiled: UITextField!
-    // グーグルサインイン
-    // 後で書きます
-    
     // パスワード
     @IBOutlet weak var passWordTextfiled: UITextField!
-   
     // 上位部分のラベル
     @IBOutlet weak var warakasuLabel: LTMorphingLabel!
   
@@ -170,7 +166,6 @@ class LoginViewController: UIViewController {
             passWordTextfiled.resignFirstResponder()
         }
     }
-    
 
 }
 
