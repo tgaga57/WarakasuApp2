@@ -10,7 +10,6 @@ import UIKit
 import XLPagerTabStrip
 import FirebaseStorage
 import FirebaseFirestore
-import AVKit
 import AVFoundation
 
 class GyaguViewController: UIViewController,IndicatorInfoProvider,UITableViewDelegate,UITableViewDataSource{
@@ -20,14 +19,23 @@ class GyaguViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
     // 更新のぐるぐる
     let refreshControl = UIRefreshControl()
     
+    // firebase Storage
+    let storage = Storage.storage()
+    
     // tableview
     @IBOutlet weak var tableView: UITableView!
     
     // 投稿内容を格納する
     var items = [NSDictionary]()
     
+    // 動画情報のリスト
+    var videoList: [String] = []
+    
     // タブ名　xlpagerの名前
     var itemInfo: IndicatorInfo = "一発ギャグ"
+    
+    // 動画のフォルダ名
+    let videoPath: String = "Gyagu"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +52,7 @@ class GyaguViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
         tableView.dataSource = self
         // コメント、名前、プロフィールを取得
         fetch()
-        // 動画動画データ取得
-//        fetchList()
+        
     }
     
     // データの取得
@@ -88,43 +95,20 @@ class GyaguViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
     
     // セルの設定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GyaguCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GyaguCell", for: indexPath) as! GyaguTableViewCell
         // 選択不可にする
         cell.selectionStyle = .none
         // itemsの中からindexpathのrow番目を取得
         let dict = items[(indexPath as NSIndexPath).row]
      
-                // 表示情報　プロフィール情報、ユーザー名、投稿動画、コメント
-        // プロフィール画像
-        let profileImageView = cell.viewWithTag(1) as! UIImageView
-        
-        // 画像情報
-        if let profImage = dict["profileImage"] {
-            // NSData型に変換
-            let dataProfImage = NSData(base64Encoded: profImage as! String, options: .ignoreUnknownCharacters)
-            // さらにUIImage型に変換
-            let decadedProfImage = UIImage(data: dataProfImage! as Data)
-            // profileImageViewへ代入
-            profileImageView.image = decadedProfImage
-            print ("通過しました")
-        } else {
-            profileImageView.image = #imageLiteral(resourceName: "宇宙人アイコン")
-            print("nilです")
-        }
-        
-        // ユーザー名
-        let userNameLabel = cell.viewWithTag(2) as! UILabel
-        userNameLabel.text = dict["userName"] as? String
-        
-        // コメント
-        let commentTextView = cell.viewWithTag(4) as! UILabel
-        commentTextView.text = dict["comment"] as? String
+        // cellviewcontloorに飛ばす
+        cell.set(dict: dict)
         
         return cell
     }
     // セルの高さ
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 400
+        return 500
     }
     
     // IndicatorInfoProvider のクラスの中に書かないとダメなやつ

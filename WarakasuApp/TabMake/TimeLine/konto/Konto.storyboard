@@ -22,11 +22,11 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConteCell" rowHeight="434" id="I4c-7s-iA1">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="434"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConteCell" rowHeight="476" id="I4c-7s-iA1" customClass="ConteTableViewCell" customModule="WarakasuApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="476"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I4c-7s-iA1" id="vbg-Uu-5Cs">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="433.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="475.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0aX-me-jya">
@@ -43,15 +43,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOC-CM-3F5">
-                                                    <rect key="frame" x="40" y="72" width="240" height="199"/>
+                                                    <rect key="frame" x="15" y="72" width="290" height="250"/>
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="199" id="3ZJ-WJ-J2t"/>
-                                                        <constraint firstAttribute="width" constant="240" id="aKE-RF-4la"/>
+                                                        <constraint firstAttribute="height" constant="250" id="nYL-Pq-bqk"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6o-vO-ytl">
-                                                    <rect key="frame" x="40" y="291" width="240" height="76"/>
+                                                    <rect key="frame" x="40" y="342" width="240" height="76"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="76" id="E3f-E5-RT2"/>
                                                         <constraint firstAttribute="width" constant="240" id="gXy-d7-pfZ"/>
@@ -67,11 +66,19 @@
                                                 <constraint firstItem="j6o-vO-ytl" firstAttribute="top" secondItem="vOC-CM-3F5" secondAttribute="bottom" constant="20" id="OBz-eN-ebP"/>
                                                 <constraint firstItem="0aX-me-jya" firstAttribute="leading" secondItem="vbg-Uu-5Cs" secondAttribute="leading" constant="40" id="Uyd-IA-yxH"/>
                                                 <constraint firstItem="0aX-me-jya" firstAttribute="top" secondItem="vbg-Uu-5Cs" secondAttribute="top" constant="10" id="WXa-2k-PBa"/>
+                                                <constraint firstItem="vOC-CM-3F5" firstAttribute="leading" secondItem="vbg-Uu-5Cs" secondAttribute="leadingMargin" id="d8H-rn-Coo"/>
                                                 <constraint firstItem="j6o-vO-ytl" firstAttribute="centerX" secondItem="vbg-Uu-5Cs" secondAttribute="centerX" id="eO4-V1-VXd"/>
                                                 <constraint firstItem="vOC-CM-3F5" firstAttribute="top" secondItem="0aX-me-jya" secondAttribute="bottom" constant="18" id="iNx-sa-aJi"/>
                                                 <constraint firstItem="kyQ-0a-qDY" firstAttribute="leading" secondItem="0aX-me-jya" secondAttribute="trailing" constant="8" id="knF-AY-ZMr"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="vOC-CM-3F5" secondAttribute="trailing" id="s1N-hi-NtX"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentLabel" destination="j6o-vO-ytl" id="g5p-IX-KAm"/>
+                                            <outlet property="profImageView" destination="0aX-me-jya" id="cVc-TL-zVW"/>
+                                            <outlet property="userName" destination="kyQ-0a-qDY" id="dBl-Sg-JOz"/>
+                                            <outlet property="videoView" destination="vOC-CM-3F5" id="vpB-nB-fSK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

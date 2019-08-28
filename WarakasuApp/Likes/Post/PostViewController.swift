@@ -50,7 +50,8 @@ class PostViewController: UIViewController {
     
     // 動画内容のコメント
     @IBOutlet weak var commentTextView: UITextView!
-    
+    // filename
+    var fileName: String?
     
     
     // viewdidload
@@ -142,7 +143,8 @@ class PostViewController: UIViewController {
         let base64ProfileImage = profileImageData.base64EncodedString(options: .lineLength64Characters) as String
         
         // Firestoreに飛ばす箱を用意
-        let user: NSDictionary = ["userName": userName ?? "" , "comment": comment ?? "","profileImage": base64ProfileImage]
+        guard let fileName = self.fileName else { return }
+        let user: NSDictionary = ["userName": userName ?? "" , "comment": comment ?? "","profileImage": base64ProfileImage, "filename": fileName]
         
         // コメントとかを別々のコレクションに分ける
         if categoryId == 0 {
@@ -188,16 +190,17 @@ class PostViewController: UIViewController {
     
     // アップロードした動画名をDBに保存
     func uploadVideoName(videoName: String) {
-        var ref: DocumentReference? = nil
-        ref = db.collection(videoPath).addDocument(data: [
-            "name": videoName
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added with ID: \(ref!.documentID)")
-            }
-        }
+//        var ref: DocumentReference? = nil
+//        ref = db.collection(videoPath).addDocument(data: [
+//            "name": videoName
+//        ]) { err in
+//            if let err = err {
+//                print("Error adding document: \(err)")
+//            } else {
+//                print("Document added with ID: \(ref!.documentID)")
+//            }
+//        }
+        self.fileName = videoName
     }
     
     // キーボードを閉じる処理

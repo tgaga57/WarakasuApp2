@@ -9,6 +9,8 @@
 import UIKit
 import XLPagerTabStrip
 import FirebaseFirestore
+import FirebaseStorage
+import AVFoundation
 
 class KontoViewController: UIViewController,IndicatorInfoProvider,UITableViewDelegate,UITableViewDataSource{
     
@@ -18,14 +20,22 @@ class KontoViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
     // 更新のぐるぐる
     let refreshControl = UIRefreshControl()
     
-    // テーブルヴュー
+    // firebase Storage
+    let storage = Storage.storage()
+    
+    // tableview
     @IBOutlet weak var tableView: UITableView!
+    
     
     // 投稿内容を格納する
     var items = [NSDictionary]()
     
+    // 動画情報のリスト
+    var videoList: [String] = []
     // タブ名
     var itemInfo: IndicatorInfo = "ショートコント"
+    // 動画のフォルダ名
+    let videoPath: String = "Imitation"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,45 +92,21 @@ class KontoViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
     
     // セルの設定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ConteCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ConteCell", for: indexPath) as! ConteTableViewCell
         // 選択不可にする
         cell.selectionStyle = .none
         // itemsの中からindexpathのrow番目を取得
         let dict = items[(indexPath as NSIndexPath).row]
-        // 表示情報　プロフィール情報　ユーザー名　投稿画像　コメント
         
-        // プロフィール画像
-        let profileImageView = cell.viewWithTag(1) as! UIImageView
-        // 画像情報
-        if let profImage = dict["profileImage"] {
-        // NSData型に変換
-        let dataProfImage = NSData(base64Encoded: profImage as! String, options: .ignoreUnknownCharacters)
-        // さらにUIImage型に変換
-        let decadedProfImage = UIImage(data: dataProfImage! as Data)
-        // profileImageViewへ代入
-        profileImageView.image = decadedProfImage
-            print ("通過しました")
-        } else {
-         profileImageView.image = #imageLiteral(resourceName: "宇宙人アイコン")
-            print ("nilです")
-        }
-        
-        // ユーザー名
-        let userNameLabel = cell.viewWithTag(2) as! UILabel
-        userNameLabel.text = dict["userName"] as? String
-        
-        // コメント
-        let commentTextView = cell.viewWithTag(4) as! UILabel
-        commentTextView.text = dict["comment"] as? String
+        // cellviewの情報を渡す
+        cell.set(dict: dict)
         
         return cell
     }
     // セルの高さ
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 400
+        return 500
     }
-    
-    
     // IndicatorInfoProvider のクラスの中に書かないとダメなやつ
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         

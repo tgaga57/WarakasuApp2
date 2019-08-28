@@ -15,7 +15,6 @@ import AVFoundation
 class MonomaneViewController: UIViewController,IndicatorInfoProvider,UITableViewDelegate,UITableViewDataSource{
     // インスタンス化
     let db = Firestore.firestore()
-    
     // 更新のぐるぐる
     let refreshControl = UIRefreshControl()
     
@@ -25,19 +24,13 @@ class MonomaneViewController: UIViewController,IndicatorInfoProvider,UITableView
     // tableview
     @IBOutlet weak var tableView: UITableView!
     
-    // 動画が反映されるやつ
-    @IBOutlet weak var videoView: UIView!
-    // AVプレイヤー情報
-    var player = AVPlayer()
-    // 再生したか否か
-    var isPlay: Bool = false
-    
     // 投稿内容を格納する
     var items = [NSDictionary]()
     
     // 動画情報のリスト
     var videoList: [String] = []
-    // firebaseのストレージ名
+    
+    // タブ名
     var itemInfo: IndicatorInfo = "モノマネ"
     
     // 動画のフォルダ名
@@ -58,6 +51,7 @@ class MonomaneViewController: UIViewController,IndicatorInfoProvider,UITableView
         tableView.dataSource = self
         
         fetch()
+        
     }
     
     // データの取得
@@ -80,71 +74,6 @@ class MonomaneViewController: UIViewController,IndicatorInfoProvider,UITableView
         }
     }
     
-    /// Firestoreに別途格納した動画名の一覧を取得する
-    func fetchList() {
-        db.collection(videoPath).getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                    guard let names = document.data() as? [String: String], let name = names["name"] else {
-                        return
-                    }
-                    
-                    self.videoList.append(name)
-                }
-                print(self.videoList)
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-    // 動画の再生と破棄を行う
-    func videoPlay(index: Int) {
-        let storageRef = storage.reference()
-        // ファイル名の一覧は取得できないので登録時に別途名前のリストをDBに作成しておくと良い。
-        let starsRef = storageRef.child("\(videoPath)/\(videoList[index])") // gs://test-video-d407d.appspot.com/video.mp4
-        print("starsRef:\(starsRef)")
-        
-        // ダウンロードURLの生成
-        starsRef.downloadURL { url, error in
-            if let error = error {
-                print("取得エラー:\(error)")
-                
-            } else {
-                guard let url = url else {
-                    print("動画変換失敗")
-                    return
-                }
-                print("url:\(url)")
-                // Bundle Resourcesからsample.mp4を読み込んで再生
-                self.player = AVPlayer(url: url)
-                self.player.play()
-                
-                if !self.isPlay {
-                    self.isPlay = true
-                    // AVPlayer用のLayerを生成
-                    let playerLayer = AVPlayerLayer(player: self.player)
-                    playerLayer.frame = self.videoView.bounds
-                    playerLayer.videoGravity = .resizeAspectFill
-                    playerLayer.zPosition = -1 // ボタン等よりも後ろに表示
-                    self.videoView.layer.insertSublayer(playerLayer, at: 0) // 動画をレイヤーとして追加
-                    
-                } else {
-                    if let layer = self.videoView.layer.sublayers?.first {
-                        layer.removeFromSuperlayer() //Superlayerから取り除く
-                    }
-                    let playerLayer = AVPlayerLayer(player: self.player)
-                    playerLayer.frame = self.videoView.bounds
-                    playerLayer.videoGravity = .resizeAspectFill
-                    playerLayer.zPosition = -1 // ボタン等よりも後ろに表示
-                    self.videoView.layer.insertSublayer(playerLayer, at: 0) // 動画をレイヤーとして追加
-                }
-            }
-        }
-    }
-
     // 更新
     @objc func refresh() {
         // 初期化
@@ -161,47 +90,26 @@ class MonomaneViewController: UIViewController,IndicatorInfoProvider,UITableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // セルの数は投稿情報の数
         return items.count
+//        return 1
     }
     
     // セルの設定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ImitationCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ImitationCell", for: indexPath) as! MonomaneTableViewCell
         // 選択不可にする
         cell.selectionStyle = .none
+
         // itemsの中からindexpathのrow番目を取得
         let dict = items[(indexPath as NSIndexPath).row]
         
-        // 表示情報。プロフィール情報、ユーザー名、投稿画像、コメント
-        // プロフィール画像
-       let profileImageView = cell.viewWithTag(1) as! UIImageView
-        
-        // 画像情報
-        if let profImage = dict["profileImage"] {
-            // NSData型に変換
-            let dataProfImage = NSData(base64Encoded: profImage as! String, options: .ignoreUnknownCharacters)
-            // さらにUIImage型に変換
-            let decadedProfImage = UIImage(data: dataProfImage! as Data)
-            // profileImageViewへ代入
-            profileImageView.image = decadedProfImage
-            print ("通過しました")
-        } else {
-            profileImageView.image = #imageLiteral(resourceName: "宇宙人アイコン")
-            print ("nilです")
-        }
-        
-        // ユーザー名
-        let userNameLabel = cell.viewWithTag(2) as! UILabel
-        userNameLabel.text = dict["userName"] as? String
-        
-        // コメント
-        let commentTextView = cell.viewWithTag(4) as! UILabel
-        commentTextView.text = dict["comment"] as? String
-        
+        // cellviewcontloorに飛ばす
+        cell.set(dict: dict)
+     
         return cell
     }
     // セルの高さ
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 400
+        return 500
     }
     // IndicatorInfoProvider のクラスの中に書かないとダメなやつ
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
