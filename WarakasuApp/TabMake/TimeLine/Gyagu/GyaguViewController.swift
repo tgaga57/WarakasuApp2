@@ -50,8 +50,10 @@ class GyaguViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
         // tableViewのデリゲート接続
         tableView.delegate = self
         tableView.dataSource = self
-        // コメント、名前、プロフィールを取得
+        // コメント、名前、プロフィール、日時を取得
         fetch()
+        // タイムラインを降順に
+        db.collection("Gyagu").order(by: "createdAt", descending: true).limit(to: 10)
     }
     
     // データの取得

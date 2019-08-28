@@ -110,9 +110,9 @@ class PostViewController: UIViewController {
     }
     
     // 動画を載せる＋ボタン
-    @IBAction func UpVideo(_ sender: Any) {
+    @IBAction func UpVideo(_ sender: UIButton) {
         pickVideo()
-
+       
     }
     
     func pickVideo() {
@@ -148,7 +148,7 @@ class PostViewController: UIViewController {
         
         // Firestoreに飛ばす箱を用意
         guard let fileName = self.fileName else { return }
-        let user: NSDictionary = ["userName": userName ?? "" , "comment": comment ?? "","profileImage": base64ProfileImage, "filename": fileName]
+        let user: NSDictionary = ["userName": userName ?? "" , "comment": comment ?? "","profileImage": base64ProfileImage, "filename": fileName,"createdAt": Timestamp(date: Date())]
         
         // コメントとかを別々のコレクションに分ける
         if categoryId == 0 {
@@ -195,16 +195,6 @@ class PostViewController: UIViewController {
     
     // アップロードした動画名をDBに保存
     func uploadVideoName(videoName: String) {
-//        var ref: DocumentReference? = nil
-//        ref = db.collection(videoPath).addDocument(data: [
-//            "name": videoName
-//        ]) { err in
-//            if let err = err {
-//                print("Error adding document: \(err)")
-//            } else {
-//                print("Document added with ID: \(ref!.documentID)")
-//            }
-//        }
         self.fileName = videoName
     }
     

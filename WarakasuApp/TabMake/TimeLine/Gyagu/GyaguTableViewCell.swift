@@ -36,7 +36,7 @@ class GyaguTableViewCell: UITableViewCell {
     let videoPath: String = "Gyagu"
     
     // profimage
-    @IBOutlet weak var profImageVIew: UIImageView!
+    @IBOutlet weak var profImageView: UIImageView!
     // usernamelabel
     @IBOutlet weak var userNameLabel: UILabel!
     // videolabel
@@ -86,12 +86,19 @@ class GyaguTableViewCell: UITableViewCell {
         }
     }
     
-    
     func set(dict: NSDictionary) {
         commentLabel.text = dict["comment"] as? String
         videoPlay(filename: dict["filename"] as! String)
         userNameLabel.text = dict["userName"] as? String
-        profImageVIew.animationImages = dict["profileImage"] as? [UIImage]
+        
+        // 画像情報
+        let profImage = dict["profileImage"]
+        // NSData型に変換
+        let dataProfImage = NSData(base64Encoded: profImage as! String, options: .ignoreUnknownCharacters)
+        // さらにUIImage型に変換
+        let decadedProfImage = UIImage(data: dataProfImage! as Data)
+        // profileImageViewへ代入
+        profImageView.image = decadedProfImage
     }
     
     func videoPlay(filename: String) {

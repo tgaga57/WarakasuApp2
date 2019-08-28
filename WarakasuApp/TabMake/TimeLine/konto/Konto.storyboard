@@ -44,14 +44,15 @@
                                                 </label>
                                                 <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOC-CM-3F5">
                                                     <rect key="frame" x="15" y="72" width="290" height="250"/>
-                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="250" id="nYL-Pq-bqk"/>
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9T-lb-YIJ">
-                                                    <rect key="frame" x="40" y="343" width="46" height="30"/>
-                                                    <state key="normal" title="いいね"/>
+                                                    <rect key="frame" x="27" y="343" width="73" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <state key="normal" title="お笑LIKE"/>
                                                     <connections>
                                                         <action selector="likeButton:" destination="I4c-7s-iA1" eventType="touchUpInside" id="QtG-ZU-Uzv"/>
                                                     </connections>

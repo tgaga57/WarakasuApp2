@@ -44,7 +44,7 @@
                                                 </imageView>
                                                 <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jl5-oY-r4w">
                                                     <rect key="frame" x="15" y="80" width="290" height="250"/>
-                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="250" id="t97-wH-orr"/>
                                                     </constraints>
@@ -64,7 +64,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0i-Oq-GnF">
                                                     <rect key="frame" x="34" y="345" width="62" height="50"/>
                                                     <color key="backgroundColor" red="0.67660599610000005" green="1" blue="0.67946958069999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <state key="normal" title="お笑いく"/>
+                                                    <state key="normal" title="お笑LIKE"/>
                                                     <connections>
                                                         <action selector="likeButton:" destination="lGP-rF-Wmp" eventType="touchUpInside" id="XAI-rP-Lb1"/>
                                                     </connections>
@@ -106,7 +106,7 @@
                                             <outlet property="commentLabel" destination="AmB-dk-lH2" id="5HJ-Ib-3D2"/>
                                             <outlet property="likeLabel" destination="FkI-wI-mDX" id="Ajn-wT-KT4"/>
                                             <outlet property="owaraiLabel" destination="0iH-oX-nuM" id="lpn-6O-RZj"/>
-                                            <outlet property="profImageVIew" destination="ew5-fk-xi3" id="ZeO-7a-EiJ"/>
+                                            <outlet property="profImageView" destination="ew5-fk-xi3" id="ZeO-7a-EiJ"/>
                                             <outlet property="userNameLabel" destination="HSF-fJ-maH" id="8oD-Tx-16k"/>
                                             <outlet property="videoView" destination="jl5-oY-r4w" id="gu1-dw-vp7"/>
                                         </connections>

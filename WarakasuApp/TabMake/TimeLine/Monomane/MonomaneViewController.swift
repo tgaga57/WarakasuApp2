@@ -50,8 +50,11 @@ class MonomaneViewController: UIViewController,IndicatorInfoProvider,UITableView
         tableView.delegate = self
         tableView.dataSource = self
         
+        // 名前、日時、コメント、動画、プロフ画像
         fetch()
         
+        // タイムラインを降順に
+        db.collection("Imitation").order(by: "createdAt", descending: true).limit(to: 10)
     }
     
     // データの取得

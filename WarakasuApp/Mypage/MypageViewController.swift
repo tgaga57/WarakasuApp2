@@ -124,8 +124,8 @@ class MypageViewController: UIViewController,UITextFieldDelegate, UIImagePickerC
     
         
         // showalert
-            let title = "Profile was changed"
-            let message = "Lets Warakasu"
+            let title = "プロフィールを変えました！"
+            let message = "動画を投稿しよう！"
             let okText = "OK"
             
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)

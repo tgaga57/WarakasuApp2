@@ -59,7 +59,14 @@ class ConteTableViewCell: UITableViewCell {
         commentLabel.text = dict["comment"] as? String
         videoPlay(filename: dict["filename"] as! String)
         userName.text = dict["userName"] as? String
-        profImageView.animationImages = dict["profileImage"] as? [UIImage]
+        // 画像情報
+        let profImage = dict["profileImage"]
+        // NSData型に変換
+        let dataProfImage = NSData(base64Encoded: profImage as! String, options: .ignoreUnknownCharacters)
+        // さらにUIImage型に変換
+        let decadedProfImage = UIImage(data: dataProfImage! as Data)
+        // profileImageViewへ代入
+        profImageView.image = decadedProfImage
     }
     
     

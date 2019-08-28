@@ -49,9 +49,13 @@ class KontoViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
         // tableViewのデリゲート接続
         tableView.delegate = self
         tableView.dataSource = self
-        
+        // 名前、日時、コメント、動画、プロフ画像
         fetch()
+        
+        // タイムラインを降順に
+        db.collection("Conte").order(by: "createdAt", descending: true).limit(to: 10)
     }
+    
     // データの取得
     func fetch() {
         // getで一発ギャグのコレクションを取得
