@@ -121,6 +121,17 @@ class MypageViewController: UIViewController,UITextFieldDelegate, UIImagePickerC
         UserDefaults.standard.set(base64String, forKey: "profileImage")
         // ユーザー名の保存
         UserDefaults.standard.set(userName, forKey: "userName")
+    
+            let title = "プロフィールを変更しました！！"
+            let message = ""
+            let okText = "OK"
+            
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let okayButton = UIAlertAction(title: okText, style: UIAlertAction.Style.cancel, handler: nil)
+            alert.addAction(okayButton)
+            
+            present(alert, animated: true, completion: nil)
+        
         }
     
     // ログアウトボタン
