@@ -22,6 +22,9 @@ class ConteTableViewCell: UITableViewCell {
     // AVプレイヤー情報
     var player = AVPlayer()
     
+    // likecount
+    var likeCount: Int = 0
+    
     // 再生したか否か
     var isPlay: Bool = false
 
@@ -36,6 +39,10 @@ class ConteTableViewCell: UITableViewCell {
     @IBOutlet weak var videoView: UIView!
     // 投稿者のコメントラベル
     @IBOutlet weak var commentLabel: UILabel!
+    // likeLabel
+    @IBOutlet weak var likeLabel: UILabel!
+    // お笑いlabel
+    @IBOutlet weak var owaraiLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -54,6 +61,33 @@ class ConteTableViewCell: UITableViewCell {
         userName.text = dict["userName"] as? String
         profImageView.animationImages = dict["profileImage"] as? [UIImage]
     }
+    
+    
+    @IBAction func likeButton(_ sender: Any) {
+        // likecountに足していく
+        likeCount = likeCount + 1
+        // likelabelにいいね数を表示
+        // labalに表示できるようにString型に変更
+        likeLabel.text = String(likeCount)
+        
+        switch likeCount {
+        case (1...5):
+            owaraiLabel.text = "まだまだ"
+        case (3...20):
+            owaraiLabel.text = "まあおもろい"
+        case (21...50):
+            owaraiLabel.text = "おもろい"
+        case (51...100):
+            owaraiLabel.text = "めちゃおもろい"
+        case (100...200):
+            owaraiLabel.text = "クソおもろい"
+        case (200...1000):
+            owaraiLabel.text = "神"
+        default: break
+        }
+    
+    }
+    
     
     func videoPlay(filename: String) {
         let storageRef = storage.reference()

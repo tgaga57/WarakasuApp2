@@ -49,8 +49,29 @@
                                                         <constraint firstAttribute="height" constant="250" id="nYL-Pq-bqk"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6o-vO-ytl">
-                                                    <rect key="frame" x="40" y="342" width="240" height="76"/>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9T-lb-YIJ">
+                                                    <rect key="frame" x="40" y="343" width="46" height="30"/>
+                                                    <state key="normal" title="いいね"/>
+                                                    <connections>
+                                                        <action selector="likeButton:" destination="I4c-7s-iA1" eventType="touchUpInside" id="QtG-ZU-Uzv"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="いいね数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7OH-y7-4Ra">
+                                                    <rect key="frame" x="101" y="348" width="70" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9f-Vq-SYo">
+                                                    <rect key="frame" x="139" y="377" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6o-vO-ytl">
+                                                    <rect key="frame" x="40" y="399" width="240" height="76"/>
+                                                    <color key="backgroundColor" red="0.81752740430000004" green="1" blue="0.87853666509999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="76" id="E3f-E5-RT2"/>
                                                         <constraint firstAttribute="width" constant="240" id="gXy-d7-pfZ"/>
@@ -63,9 +84,11 @@
                                             <constraints>
                                                 <constraint firstItem="vOC-CM-3F5" firstAttribute="centerX" secondItem="vbg-Uu-5Cs" secondAttribute="centerX" id="1N5-0n-s4g"/>
                                                 <constraint firstItem="kyQ-0a-qDY" firstAttribute="top" secondItem="vbg-Uu-5Cs" secondAttribute="top" constant="23" id="D9A-3B-jKM"/>
-                                                <constraint firstItem="j6o-vO-ytl" firstAttribute="top" secondItem="vOC-CM-3F5" secondAttribute="bottom" constant="20" id="OBz-eN-ebP"/>
+                                                <constraint firstItem="a9T-lb-YIJ" firstAttribute="top" secondItem="vOC-CM-3F5" secondAttribute="bottom" constant="21" id="Nmt-14-foW"/>
+                                                <constraint firstItem="p9f-Vq-SYo" firstAttribute="centerX" secondItem="vbg-Uu-5Cs" secondAttribute="centerX" id="Orb-i9-cJC"/>
                                                 <constraint firstItem="0aX-me-jya" firstAttribute="leading" secondItem="vbg-Uu-5Cs" secondAttribute="leading" constant="40" id="Uyd-IA-yxH"/>
                                                 <constraint firstItem="0aX-me-jya" firstAttribute="top" secondItem="vbg-Uu-5Cs" secondAttribute="top" constant="10" id="WXa-2k-PBa"/>
+                                                <constraint firstItem="j6o-vO-ytl" firstAttribute="top" secondItem="a9T-lb-YIJ" secondAttribute="bottom" constant="16" id="ch6-cx-NkD"/>
                                                 <constraint firstItem="vOC-CM-3F5" firstAttribute="leading" secondItem="vbg-Uu-5Cs" secondAttribute="leadingMargin" id="d8H-rn-Coo"/>
                                                 <constraint firstItem="j6o-vO-ytl" firstAttribute="centerX" secondItem="vbg-Uu-5Cs" secondAttribute="centerX" id="eO4-V1-VXd"/>
                                                 <constraint firstItem="vOC-CM-3F5" firstAttribute="top" secondItem="0aX-me-jya" secondAttribute="bottom" constant="18" id="iNx-sa-aJi"/>
@@ -75,6 +98,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="commentLabel" destination="j6o-vO-ytl" id="g5p-IX-KAm"/>
+                                            <outlet property="likeLabel" destination="7OH-y7-4Ra" id="imW-WK-roF"/>
+                                            <outlet property="owaraiLabel" destination="p9f-Vq-SYo" id="h0z-f6-yvG"/>
                                             <outlet property="profImageView" destination="0aX-me-jya" id="cVc-TL-zVW"/>
                                             <outlet property="userName" destination="kyQ-0a-qDY" id="dBl-Sg-JOz"/>
                                             <outlet property="videoView" destination="vOC-CM-3F5" id="vpB-nB-fSK"/>

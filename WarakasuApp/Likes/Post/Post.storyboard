@@ -77,7 +77,7 @@
                                     <constraint firstAttribute="height" constant="41" id="pId-JJ-9Sf"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vf1-s9-2uI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vf1-s9-2uI">
                                 <rect key="frame" x="40" y="117" width="240" height="160"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -85,11 +85,11 @@
                                     <constraint firstAttribute="width" constant="240" id="TXW-ve-a0N"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dc-PM-lNk">
-                                <rect key="frame" x="126" y="121" width="57" height="79"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dc-PM-lNk">
+                                <rect key="frame" x="97" y="134" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="56"/>
-                                <state key="normal" title="＋"/>
+                                <color key="backgroundColor" red="0.1809217373" green="0.68829707610000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="アップロードアイコン (1)"/>
                                 <connections>
                                     <action selector="UpVideo:" destination="txA-Nt-NuA" eventType="touchUpInside" id="M9S-dn-3Cw"/>
                                 </connections>
@@ -100,7 +100,6 @@
                             <constraint firstItem="i1W-kS-rrx" firstAttribute="top" secondItem="amt-eA-OVg" secondAttribute="bottom" constant="15" id="4d8-33-Ebr"/>
                             <constraint firstItem="gy3-cv-PX9" firstAttribute="centerX" secondItem="qlA-pG-d4M" secondAttribute="centerX" id="6oG-0Z-J9P"/>
                             <constraint firstItem="rTF-V6-i6u" firstAttribute="top" secondItem="gy3-cv-PX9" secondAttribute="bottom" constant="17.5" id="7Cy-c5-Q5k"/>
-                            <constraint firstItem="Vf1-s9-2uI" firstAttribute="top" secondItem="rTF-V6-i6u" secondAttribute="bottom" constant="5" id="8N1-mP-NMq"/>
                             <constraint firstItem="gy3-cv-PX9" firstAttribute="top" secondItem="A1I-kI-7Vl" secondAttribute="top" constant="30" id="ATW-TR-1AO"/>
                             <constraint firstItem="XJE-E0-0I8" firstAttribute="top" secondItem="A1I-kI-7Vl" secondAttribute="top" constant="48" id="D8O-rW-2Pp"/>
                             <constraint firstItem="rTF-V6-i6u" firstAttribute="leading" secondItem="XJE-E0-0I8" secondAttribute="trailing" constant="8" id="FyK-kE-nei"/>
@@ -114,6 +113,7 @@
                             <constraint firstItem="A1I-kI-7Vl" firstAttribute="bottom" secondItem="i1W-kS-rrx" secondAttribute="bottom" constant="62" id="djp-GQ-FHF"/>
                             <constraint firstItem="i1W-kS-rrx" firstAttribute="leading" secondItem="A1I-kI-7Vl" secondAttribute="leading" constant="16" id="rNR-sk-Hgf"/>
                             <constraint firstItem="ehy-l5-8RX" firstAttribute="centerX" secondItem="qlA-pG-d4M" secondAttribute="centerX" id="sCh-n5-XAP"/>
+                            <constraint firstItem="Vf1-s9-2uI" firstAttribute="top" secondItem="rTF-V6-i6u" secondAttribute="bottom" constant="8" id="wxe-Jb-63u"/>
                             <constraint firstItem="amt-eA-OVg" firstAttribute="centerX" secondItem="qlA-pG-d4M" secondAttribute="centerX" id="zno-Vk-5UE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A1I-kI-7Vl"/>
@@ -130,4 +130,7 @@
             <point key="canvasLocation" x="-129.375" y="79.225352112676063"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="アップロードアイコン (1)" width="128" height="128"/>
+    </resources>
 </document>

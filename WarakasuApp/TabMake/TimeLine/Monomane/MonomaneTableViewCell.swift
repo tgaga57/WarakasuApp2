@@ -13,6 +13,7 @@ import AVKit
 
 class MonomaneTableViewCell: UITableViewCell {
 
+     
     // items
     var item: NSDictionary?
     
@@ -21,6 +22,9 @@ class MonomaneTableViewCell: UITableViewCell {
     
     // AVプレイヤー情報
     var player = AVPlayer()
+    
+    // likecount
+    var likeCount: Int = 0
     
     // 再生したか否か
     var isPlay: Bool = false
@@ -40,6 +44,10 @@ class MonomaneTableViewCell: UITableViewCell {
     // 投稿者のコメントラベる
     @IBOutlet weak var CommentLabel: UILabel!
     
+    // likelabel
+    @IBOutlet weak var likeLabel: UILabel!
+    //owrailabel
+    @IBOutlet weak var owaraiLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,6 +58,31 @@ class MonomaneTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    // likebutton
+    @IBAction func likeButton(_ sender: Any) {
+        // likecountに足していく
+        likeCount = likeCount + 1
+        // likelabelにいいね数を表示
+        // labalに表示できるようにString型に変更
+        likeLabel.text = String(likeCount)
+        
+        switch likeCount {
+        case (1...5):
+            owaraiLabel.text = "まだまだ"
+        case (3...20):
+            owaraiLabel.text = "まあおもろい"
+        case (21...50):
+            owaraiLabel.text = "おもろい"
+        case (51...100):
+            owaraiLabel.text = "めちゃおもろい"
+        case (100...200):
+            owaraiLabel.text = "クソおもろい"
+        case (200...1000):
+            owaraiLabel.text = "神"
+        default: break
+        }
     }
     
     func set(dict: NSDictionary) {

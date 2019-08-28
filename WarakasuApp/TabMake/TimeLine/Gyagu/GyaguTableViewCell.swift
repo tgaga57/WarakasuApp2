@@ -10,11 +10,18 @@ import UIKit
 import FirebaseStorage
 import AVFoundation
 import AVKit
+import Firebase
 
 class GyaguTableViewCell: UITableViewCell {
     
+    // firebase
+    let db = Firestore.firestore()
+    
     // items
     var item: NSDictionary?
+    
+    // likecount
+    var likeCount: Int = 0
     
     // ストレージ使うときに必要
     let storage = Storage.storage()
@@ -27,7 +34,6 @@ class GyaguTableViewCell: UITableViewCell {
     
     // firebaseのコレクション名
     let videoPath: String = "Gyagu"
-
     
     // profimage
     @IBOutlet weak var profImageVIew: UIImageView!
@@ -37,18 +43,50 @@ class GyaguTableViewCell: UITableViewCell {
     @IBOutlet weak var videoView: UIView!
     // 投稿者のラベル
     @IBOutlet weak var commentLabel: UILabel!
+    // いいね数ラベル
+    @IBOutlet weak var likeLabel: UILabel!
+    // お笑いラベル
+    @IBOutlet weak var owaraiLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
+    
+    // likebutton
+    @IBAction func likeButton(_ sender: Any) {
+      
+        // likecountに足していく
+        likeCount = likeCount + 1
+        // likelabelにいいね数を表示
+        // labalに表示できるようにString型に変更
+        likeLabel.text = String(likeCount)
+        
+        switch likeCount {
+        case (1...5):
+            owaraiLabel.text = "まだまだ"
+        case (3...20):
+            owaraiLabel.text = "まあおもろい"
+        case (21...50):
+            owaraiLabel.text = "おもろい"
+        case (51...100):
+            owaraiLabel.text = "めちゃおもろい"
+        case (100...200):
+            owaraiLabel.text = "クソおもろい"
+        case (200...1000):
+            owaraiLabel.text = "神"
+        default: break
+        }
+    }
+    
+    
     func set(dict: NSDictionary) {
         commentLabel.text = dict["comment"] as? String
         videoPlay(filename: dict["filename"] as! String)

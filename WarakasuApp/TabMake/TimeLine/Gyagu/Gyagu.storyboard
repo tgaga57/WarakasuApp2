@@ -49,8 +49,28 @@
                                                         <constraint firstAttribute="height" constant="250" id="t97-wH-orr"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AmB-dk-lH2">
-                                                    <rect key="frame" x="37" y="358" width="250" height="70"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkI-wI-mDX">
+                                                    <rect key="frame" x="107" y="350" width="11" height="41"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iH-oX-nuM">
+                                                    <rect key="frame" x="151.5" y="379" width="17.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0i-Oq-GnF">
+                                                    <rect key="frame" x="34" y="345" width="62" height="50"/>
+                                                    <color key="backgroundColor" red="0.67660599610000005" green="1" blue="0.67946958069999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <state key="normal" title="お笑いく"/>
+                                                    <connections>
+                                                        <action selector="likeButton:" destination="lGP-rF-Wmp" eventType="touchUpInside" id="XAI-rP-Lb1"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AmB-dk-lH2">
+                                                    <rect key="frame" x="35" y="414" width="250" height="70"/>
                                                     <color key="backgroundColor" red="0.1809217373" green="0.68829707610000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="250" id="2zT-eE-ar8"/>
@@ -62,20 +82,30 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="AmB-dk-lH2" firstAttribute="top" secondItem="jl5-oY-r4w" secondAttribute="bottom" constant="28" id="6Ab-5y-Ijd"/>
+                                                <constraint firstItem="s0i-Oq-GnF" firstAttribute="top" secondItem="jl5-oY-r4w" secondAttribute="bottom" constant="15" id="D8F-sE-mfg"/>
                                                 <constraint firstItem="AmB-dk-lH2" firstAttribute="centerX" secondItem="FvJ-yF-jtC" secondAttribute="centerX" id="Ifd-Cs-R1d"/>
+                                                <constraint firstItem="AmB-dk-lH2" firstAttribute="top" secondItem="s0i-Oq-GnF" secondAttribute="bottom" constant="19" id="L49-F6-xvA"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="jl5-oY-r4w" secondAttribute="trailing" id="Lfz-FE-TXU"/>
+                                                <constraint firstItem="AmB-dk-lH2" firstAttribute="top" secondItem="0iH-oX-nuM" secondAttribute="bottom" constant="14" id="MR1-cW-3lq"/>
                                                 <constraint firstItem="ew5-fk-xi3" firstAttribute="leading" secondItem="FvJ-yF-jtC" secondAttribute="leading" constant="40" id="XD8-OX-Qyx"/>
                                                 <constraint firstItem="HSF-fJ-maH" firstAttribute="leading" secondItem="ew5-fk-xi3" secondAttribute="trailing" constant="8" id="aRN-w3-Lz0"/>
+                                                <constraint firstItem="AmB-dk-lH2" firstAttribute="bottom" secondItem="FvJ-yF-jtC" secondAttribute="bottomMargin" constant="10" id="am5-Eu-Pkp"/>
+                                                <constraint firstItem="AmB-dk-lH2" firstAttribute="top" secondItem="FkI-wI-mDX" secondAttribute="bottom" constant="23" id="bBf-iM-ZAj"/>
                                                 <constraint firstItem="jl5-oY-r4w" firstAttribute="centerX" secondItem="FvJ-yF-jtC" secondAttribute="centerX" id="bPN-0D-bc6"/>
                                                 <constraint firstItem="jl5-oY-r4w" firstAttribute="leading" secondItem="FvJ-yF-jtC" secondAttribute="leadingMargin" id="dVk-80-ZMW"/>
+                                                <constraint firstItem="FkI-wI-mDX" firstAttribute="top" secondItem="jl5-oY-r4w" secondAttribute="bottom" constant="20" id="emc-pI-NtB"/>
+                                                <constraint firstItem="s0i-Oq-GnF" firstAttribute="leading" secondItem="FvJ-yF-jtC" secondAttribute="leadingMargin" constant="19" id="gB4-BP-tzy"/>
                                                 <constraint firstItem="jl5-oY-r4w" firstAttribute="top" secondItem="ew5-fk-xi3" secondAttribute="bottom" constant="30" id="hTv-Uu-zhL"/>
+                                                <constraint firstItem="FkI-wI-mDX" firstAttribute="leading" secondItem="s0i-Oq-GnF" secondAttribute="trailing" constant="11" id="n3m-yl-bGE"/>
                                                 <constraint firstItem="ew5-fk-xi3" firstAttribute="top" secondItem="FvJ-yF-jtC" secondAttribute="top" constant="10" id="o2U-wf-Z52"/>
+                                                <constraint firstItem="0iH-oX-nuM" firstAttribute="centerX" secondItem="FvJ-yF-jtC" secondAttribute="centerX" id="uyA-ZX-pJ1"/>
                                                 <constraint firstItem="HSF-fJ-maH" firstAttribute="top" secondItem="FvJ-yF-jtC" secondAttribute="top" constant="23" id="zT0-EL-2XQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="commentLabel" destination="AmB-dk-lH2" id="5HJ-Ib-3D2"/>
+                                            <outlet property="likeLabel" destination="FkI-wI-mDX" id="Ajn-wT-KT4"/>
+                                            <outlet property="owaraiLabel" destination="0iH-oX-nuM" id="lpn-6O-RZj"/>
                                             <outlet property="profImageVIew" destination="ew5-fk-xi3" id="ZeO-7a-EiJ"/>
                                             <outlet property="userNameLabel" destination="HSF-fJ-maH" id="8oD-Tx-16k"/>
                                             <outlet property="videoView" destination="jl5-oY-r4w" id="gu1-dw-vp7"/>

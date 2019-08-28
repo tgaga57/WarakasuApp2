@@ -52,7 +52,6 @@ class GyaguViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
         tableView.dataSource = self
         // コメント、名前、プロフィールを取得
         fetch()
-        
     }
     
     // データの取得
@@ -85,6 +84,7 @@ class GyaguViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
         tableView.reloadData()
         // リフレッシュを止める
         refreshControl.endRefreshing()
+        
     }
     
     // セルの数

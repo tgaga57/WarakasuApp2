@@ -39,7 +39,9 @@ class PostViewController: UIViewController {
     // タブの変数(タイムラインの)
     var categoryId: Int?
     
-    // 投稿した動画確認videoview
+    //動画が投稿されたときに使われる変数
+    var isSelect : Bool = false
+    // 投稿した動画確認用
     @IBOutlet weak var videoView: UIImageView!
     
     // プロフィール画像
@@ -110,6 +112,7 @@ class PostViewController: UIViewController {
     // 動画を載せる＋ボタン
     @IBAction func UpVideo(_ sender: Any) {
         pickVideo()
+
     }
     
     func pickVideo() {
@@ -126,6 +129,7 @@ class PostViewController: UIViewController {
             videoPicker.delegate = self
             // 画面遷移
             self.present(videoPicker, animated: true)
+            
         }
     }
     
@@ -159,6 +163,7 @@ class PostViewController: UIViewController {
         } else {
             print("エラー")
         }
+        
         // 画面を消す
         self.dismiss(animated: true)
     }
@@ -219,11 +224,13 @@ extension PostViewController:  UIImagePickerControllerDelegate, UINavigationCont
             print("選択後のビデオパス取得できず。")
             return
         }
-        let filename = videoURL.lastPathComponent
-        print(videoURL)
-        print(filename)
-        uploadVideo(url: videoURL, fileName: filename)
-        picker.dismiss(animated: true, completion: nil)
+        
+            let filename = videoURL.lastPathComponent
+            print(videoURL)
+            print(filename)
+            uploadVideo(url: videoURL, fileName: filename)
+            picker.dismiss(animated: true, completion: nil)
+        
     }
     
 }

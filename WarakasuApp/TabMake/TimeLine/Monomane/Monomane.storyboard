@@ -49,12 +49,34 @@
                                                         <constraint firstAttribute="height" constant="250" id="mBO-ff-UeH"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eS-n5-Y6D">
-                                                    <rect key="frame" x="43" y="344" width="234" height="83"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eS-n5-Y6D">
+                                                    <rect key="frame" x="60" y="377" width="200" height="56"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="234" id="09P-Ov-m2j"/>
-                                                        <constraint firstAttribute="height" constant="83" id="QgH-ef-RlE"/>
+                                                        <constraint firstAttribute="width" constant="200" id="8sx-Gn-l4S"/>
+                                                        <constraint firstAttribute="height" constant="50" id="QgH-ef-RlE"/>
                                                     </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sA0-tB-jqi">
+                                                    <rect key="frame" x="29" y="339" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="いいね"/>
+                                                    <connections>
+                                                        <action selector="likeButton:" destination="SqB-YE-2I1" eventType="touchUpInside" id="rf1-nv-vBG"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="いいね数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23v-3L-p9N">
+                                                    <rect key="frame" x="90" y="343" width="70" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="笑い度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDK-Sw-CsG">
+                                                    <rect key="frame" x="195" y="344" width="52" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -63,7 +85,6 @@
                                             <constraints>
                                                 <constraint firstItem="7e9-Cr-vRl" firstAttribute="leading" secondItem="R2p-LU-eWZ" secondAttribute="trailing" constant="8" id="Gne-6U-c29"/>
                                                 <constraint firstItem="0eS-n5-Y6D" firstAttribute="centerX" secondItem="2AI-B0-hG5" secondAttribute="centerX" id="HAI-UG-a0m"/>
-                                                <constraint firstItem="0eS-n5-Y6D" firstAttribute="top" secondItem="fHr-ce-HGY" secondAttribute="bottom" constant="20" id="IfR-dE-1C4"/>
                                                 <constraint firstItem="fHr-ce-HGY" firstAttribute="leading" secondItem="2AI-B0-hG5" secondAttribute="leadingMargin" id="KcS-4X-QaT"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="fHr-ce-HGY" secondAttribute="trailing" id="L63-m4-g5U"/>
                                                 <constraint firstItem="R2p-LU-eWZ" firstAttribute="top" secondItem="2AI-B0-hG5" secondAttribute="top" constant="10" id="Uo1-ei-gDz"/>
@@ -75,7 +96,9 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="CommentLabel" destination="0eS-n5-Y6D" id="AVS-wL-iC7"/>
+                                            <outlet property="likeLabel" destination="23v-3L-p9N" id="Ih0-bE-o9m"/>
                                             <outlet property="nameLabel" destination="7e9-Cr-vRl" id="euG-k6-2qt"/>
+                                            <outlet property="owaraiLabel" destination="EDK-Sw-CsG" id="MIv-zk-r80"/>
                                             <outlet property="profImageView" destination="R2p-LU-eWZ" id="Wko-Ob-5mn"/>
                                             <outlet property="videoView" destination="fHr-ce-HGY" id="4cJ-c7-f4Z"/>
                                         </connections>

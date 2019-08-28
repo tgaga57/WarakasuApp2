@@ -122,8 +122,10 @@ class MypageViewController: UIViewController,UITextFieldDelegate, UIImagePickerC
         // ユーザー名の保存
         UserDefaults.standard.set(userName, forKey: "userName")
     
-            let title = "プロフィールを変更しました！！"
-            let message = ""
+        
+        // showalert
+            let title = "Profile was changed"
+            let message = "Lets Warakasu"
             let okText = "OK"
             
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
