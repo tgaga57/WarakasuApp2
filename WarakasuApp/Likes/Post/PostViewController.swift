@@ -109,7 +109,10 @@ class PostViewController: UIViewController {
         }
     }
     
-    // 動画を載せる＋ボタン
+    // pickVideoで選ばれたかを判断する変数
+    var isPikedVideo: Bool = false
+    
+    // 動画を載せるボタン
     @IBAction func UpVideo(_ sender: UIButton) {
         pickVideo()
        
@@ -119,7 +122,6 @@ class PostViewController: UIViewController {
         print("UIBarButtonItem。カメラロールから動画を選択")
         // カメラ・フォトライブラリが使用可能かチェック
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            
             // インスタンス化
             let videoPicker = UIImagePickerController()
             // ソースタイプの代入
@@ -132,10 +134,11 @@ class PostViewController: UIViewController {
             
         }
     }
-    
+
     // 投稿ボタン
     @IBAction func PostAll(_ sender: Any) {
-        // ネーム
+        
+        // name
         let userName = profileName.text
         // コメント
         let comment = commentTextView.text
@@ -168,7 +171,6 @@ class PostViewController: UIViewController {
         self.dismiss(animated: true)
     }
 
-    
     // タイムラインに戻るボタン
     @IBAction func Back(_ sender: Any) {
         // 前の画面に戻る
@@ -191,6 +193,7 @@ class PostViewController: UIViewController {
                 self.uploadVideoName(videoName: fileName)
             }
         }
+
     }
     
     // アップロードした動画名をDBに保存

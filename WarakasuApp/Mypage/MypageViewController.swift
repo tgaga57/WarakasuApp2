@@ -47,7 +47,6 @@ class MypageViewController: UIViewController,UITextFieldDelegate, UIImagePickerC
             // なければ匿名としておく
             userNameText.text = "匿名"
         }
-        
     }
     
     // プロフ写真変更用アクション

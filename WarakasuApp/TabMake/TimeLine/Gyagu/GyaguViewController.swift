@@ -52,13 +52,12 @@ class GyaguViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
         tableView.dataSource = self
         // コメント、名前、プロフィール、日時を取得
         fetch()
-    
+        refresh()
     }
     
     override func viewWillAppear(_ animated: Bool) {
       fetch()
     }
-    
     // データの取得
     func fetch() {
         // getで一発ギャグのコレクションを取得

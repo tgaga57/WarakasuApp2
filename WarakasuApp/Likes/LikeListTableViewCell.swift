@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 class LikeListTableViewCell: UITableViewCell {
     
@@ -30,7 +32,6 @@ class LikeListTableViewCell: UITableViewCell {
     
     // firwbaseから取り出す
     func set(dict: NSDictionary) {
-        
         likeComment.text = dict["likeComment"] as? String
         likeUserName.text = dict["likeName"] as? String
         // 画像情報
@@ -42,4 +43,5 @@ class LikeListTableViewCell: UITableViewCell {
         // profileImageViewへ代入
         likeuserImage.image = decadedProfImage
     }
+
 }

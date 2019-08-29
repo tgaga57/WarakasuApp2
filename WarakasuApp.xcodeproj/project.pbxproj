@@ -14,7 +14,6 @@
 		B1197073230A38F400575571 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1197071230A38F400575571 /* LaunchScreen.storyboard */; };
 		B1197080230A5DB300575571 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B119707F230A5DB200575571 /* Login.storyboard */; };
 		B1197082230A5E2A00575571 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1197081230A5E2A00575571 /* LoginViewController.swift */; };
-		B11ADDEA230A7BD800DD69B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B11ADDE9230A7BD800DD69B6 /* GoogleService-Info.plist */; };
 		B11BF358230FAE370079A43A /* TabMake.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B11BF357230FAE370079A43A /* TabMake.storyboard */; };
 		B11BF35D230FC0ED0079A43A /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11BF35C230FC0ED0079A43A /* TimeLineViewController.swift */; };
 		B11BF363230FC3C60079A43A /* GyaguViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11BF362230FC3C60079A43A /* GyaguViewController.swift */; };
@@ -30,6 +29,7 @@
 		B154AFCB23162D4A009BED48 /* ConteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B154AFCA23162D4A009BED48 /* ConteTableViewCell.swift */; };
 		B154AFCD23163561009BED48 /* GyaguTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B154AFCC23163561009BED48 /* GyaguTableViewCell.swift */; };
 		B1E8BDAF2316E2A600BC524B /* LikeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8BDAE2316E2A600BC524B /* LikeListTableViewCell.swift */; };
+		B1E8BDB32317973F00BC524B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1E8BDB22317973F00BC524B /* GoogleService-Info.plist */; };
 		CB7ECF19C90C4B43CF077249 /* Pods_WarakasuApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B357137C2A0E5D723ABE4309 /* Pods_WarakasuApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +45,6 @@
 		B1197074230A38F400575571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B119707F230A5DB200575571 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		B1197081230A5E2A00575571 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		B11ADDE9230A7BD800DD69B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B11BF357230FAE370079A43A /* TabMake.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabMake.storyboard; sourceTree = "<group>"; };
 		B11BF35C230FC0ED0079A43A /* TimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
 		B11BF362230FC3C60079A43A /* GyaguViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyaguViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		B154AFCA23162D4A009BED48 /* ConteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConteTableViewCell.swift; sourceTree = "<group>"; };
 		B154AFCC23163561009BED48 /* GyaguTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyaguTableViewCell.swift; sourceTree = "<group>"; };
 		B1E8BDAE2316E2A600BC524B /* LikeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListTableViewCell.swift; sourceTree = "<group>"; };
+		B1E8BDB22317973F00BC524B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B357137C2A0E5D723ABE4309 /* Pods_WarakasuApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WarakasuApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -146,7 +146,7 @@
 				B119706F230A38F400575571 /* Assets.xcassets */,
 				B1197071230A38F400575571 /* LaunchScreen.storyboard */,
 				B1197074230A38F400575571 /* Info.plist */,
-				B11ADDE9230A7BD800DD69B6 /* GoogleService-Info.plist */,
+				B1E8BDB22317973F00BC524B /* GoogleService-Info.plist */,
 			);
 			path = WarakasuApp;
 			sourceTree = "<group>";
@@ -279,12 +279,12 @@
 			files = (
 				B1197073230A38F400575571 /* LaunchScreen.storyboard in Resources */,
 				B11BF365230FC3D90079A43A /* Gyagu.storyboard in Resources */,
+				B1E8BDB32317973F00BC524B /* GoogleService-Info.plist in Resources */,
 				B11BF368230FC5D10079A43A /* Konto.storyboard in Resources */,
 				B1197080230A5DB300575571 /* Login.storyboard in Resources */,
 				B105B0962312991000D0677C /* Post.storyboard in Resources */,
 				B11BF358230FAE370079A43A /* TabMake.storyboard in Resources */,
 				B11BF36D230FC6DD0079A43A /* Monomane.storyboard in Resources */,
-				B11ADDEA230A7BD800DD69B6 /* GoogleService-Info.plist in Resources */,
 				B1197070230A38F400575571 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

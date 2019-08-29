@@ -50,6 +50,7 @@ class KontoViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
         tableView.dataSource = self
         // 名前、日時、コメント、動画、プロフ画像,降順に投稿
         fetch()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

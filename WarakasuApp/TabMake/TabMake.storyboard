@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BEb-xR-f1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1766.25" y="-1231.6901408450703"/>
+            <point key="canvasLocation" x="1429" y="-552"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cmw-SK-eL3">
@@ -111,7 +111,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AE8-UK-23S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="739" y="-1230"/>
+            <point key="canvasLocation" x="461" y="-552"/>
         </scene>
         <!--Mypage-->
         <scene sceneID="PDm-jc-9Mp">
@@ -206,11 +206,11 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LikeList" rowHeight="101" id="qR5-Ee-Y4o" customClass="LikeListTableViewCell" customModule="WarakasuApp">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="101"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LikeList" rowHeight="397" id="qR5-Ee-Y4o" customClass="LikeListTableViewCell" customModule="WarakasuApp">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="397"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qR5-Ee-Y4o" id="yyq-4A-tBh">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="396.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BW-zi-6yn">
@@ -232,11 +232,38 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OgC-C8-bfE">
+                                                    <rect key="frame" x="262" y="352" width="31" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="停止"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jz7-xB-gyc">
+                                                    <rect key="frame" x="15" y="346" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="　再生"/>
+                                                </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4YQ-Xr-Ml9">
+                                                    <rect key="frame" x="15" y="131.5" width="290" height="200"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGg-SA-K3w">
+                                                            <rect key="frame" x="235" y="143" width="30" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="200" id="2MP-pj-e86"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="AgS-NU-Vij" secondAttribute="bottom" constant="28" id="2Nn-NO-X33"/>
+                                                <constraint firstItem="4YQ-Xr-Ml9" firstAttribute="leading" secondItem="yyq-4A-tBh" secondAttribute="leadingMargin" id="6ck-Jc-1Z4"/>
+                                                <constraint firstItem="4YQ-Xr-Ml9" firstAttribute="top" secondItem="igG-23-Cf6" secondAttribute="bottom" constant="40" id="QhE-NH-YNn"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="4YQ-Xr-Ml9" secondAttribute="trailing" id="RoB-hE-5Wn"/>
                                                 <constraint firstItem="AgS-NU-Vij" firstAttribute="leading" secondItem="igG-23-Cf6" secondAttribute="trailing" constant="17" id="SkY-Pr-ghw"/>
                                                 <constraint firstItem="AgS-NU-Vij" firstAttribute="top" secondItem="1BW-zi-6yn" secondAttribute="bottom" constant="5" id="ZUj-Kc-C4F"/>
+                                                <constraint firstItem="4YQ-Xr-Ml9" firstAttribute="centerX" secondItem="yyq-4A-tBh" secondAttribute="centerX" id="bSu-9Z-s4b"/>
                                                 <constraint firstAttribute="bottom" secondItem="igG-23-Cf6" secondAttribute="bottom" constant="9" id="euL-0t-DCD"/>
                                                 <constraint firstItem="igG-23-Cf6" firstAttribute="leading" secondItem="yyq-4A-tBh" secondAttribute="leading" constant="9" id="h2p-WS-fTb"/>
                                                 <constraint firstItem="AgS-NU-Vij" firstAttribute="top" secondItem="1BW-zi-6yn" secondAttribute="bottom" constant="5" id="lbK-0f-8q8"/>

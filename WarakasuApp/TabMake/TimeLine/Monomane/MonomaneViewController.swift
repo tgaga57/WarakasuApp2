@@ -59,10 +59,11 @@ class MonomaneViewController: UIViewController,IndicatorInfoProvider,UITableView
         fetch()
     }
     
+
     // データの取得
     func fetch() {
         // getでモノマネのコレクションを取得
-        db.collection("Imitation").order(by: "crearedAt", descending: true).getDocuments() {(querySnapshot, err) in
+        db.collection("Imitation").order(by: "createdAt", descending: true).getDocuments() {(querySnapshot, err) in
             // tempItemsという変数を一時的に作成
             var tempItems = [NSDictionary]()
             // for文で回し`item`に格納
@@ -95,7 +96,6 @@ class MonomaneViewController: UIViewController,IndicatorInfoProvider,UITableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // セルの数は投稿情報の数
         return items.count
-//        return 1
     }
     
     // セルの設定

@@ -13,7 +13,7 @@ import AVKit
 import Firebase
 
 class MonomaneTableViewCell: UITableViewCell {
-
+    
     // firebase
     let db = Firestore.firestore()
     
@@ -38,34 +38,46 @@ class MonomaneTableViewCell: UITableViewCell {
     // firebaseのコレクション名
     let videoPath: String = "Imitation"
     
-    // imageview
+    // profimageview
     @IBOutlet weak var profImageView: UIImageView!
     
-    // namelabel
+    // usernamelabel
     @IBOutlet weak var nameLabel: UILabel!
     
     // videoview
     @IBOutlet weak var videoView: UIView!
-   
-    // 投稿者のコメントラベる
+    
+    // 投稿者のコメントラベル
     @IBOutlet weak var CommentLabel: UILabel!
     
     // likelabel
     @IBOutlet weak var likeLabel: UILabel!
-    //owrailabel
+    
+    //お笑いlabel
     @IBOutlet weak var owaraiLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
     
+    func set(dict: NSDictionary) {
+        CommentLabel.text = dict["comment"] as? String
+        videoPlay(filename: dict["filename"] as! String)
+        nameLabel.text = dict["userName"] as? String
+        // 画像情報
+        let profImage = dict["profileImage"]
+        // NSData型に変換
+        let dataProfImage = NSData(base64Encoded: profImage as! String, options: .ignoreUnknownCharacters)
+        // さらにUIImage型に変換
+        let decadedProfImage = UIImage(data: dataProfImage! as Data)
+        // profileImageViewへ代入
+        profImageView.image = decadedProfImage
+    }
     
     // likebutton
     @IBAction func likeButton(_ sender: Any) {
@@ -74,7 +86,7 @@ class MonomaneTableViewCell: UITableViewCell {
         // likelabelにいいね数を表示
         // labalに表示できるようにString型に変更
         likeLabel.text = String(likeCount)
-    
+        
         switch likeCount {
         case (1...5):
             owaraiLabel.text = "まだまだ"
@@ -103,6 +115,7 @@ class MonomaneTableViewCell: UITableViewCell {
         }
         let base64IconImage = likeUserImage.base64EncodedString(options: .lineLength64Characters) as String
         
+        
         // likeListを入れる
         let goodList: NSDictionary = ["likeName": likeUserName ?? "", "likeComment": likeComment ?? "","likeUserImage": base64IconImage,"createdAt": Timestamp(date: Date())]
         // firebaseにgoodListの情報を保存する
@@ -110,18 +123,14 @@ class MonomaneTableViewCell: UITableViewCell {
         print("いいね押されたよ")
     }
     
-    func set(dict: NSDictionary) {
-        CommentLabel.text = dict["comment"] as? String
-        videoPlay(filename: dict["filename"] as! String)
-        nameLabel.text = dict["userName"] as? String
-        // 画像情報
-        let profImage = dict["profileImage"]
-        // NSData型に変換
-        let dataProfImage = NSData(base64Encoded: profImage as! String, options: .ignoreUnknownCharacters)
-        // さらにUIImage型に変換
-        let decadedProfImage = UIImage(data: dataProfImage! as Data)
-        // profileImageViewへ代入
-        profImageView.image = decadedProfImage
+    // スタートボタン
+    @IBAction func videoStartButton(_ sender: Any) {
+        self.player.play()
+    }
+    
+    // ストップボタン
+    @IBAction func videoStopButton(_ sender: Any) {
+        self.player.pause()
     }
     
     func videoPlay(filename: String) {
@@ -143,7 +152,7 @@ class MonomaneTableViewCell: UITableViewCell {
                 print("url:\(url)")
                 // Bundle Resourcesからsample.mp4を読み込んで再生
                 self.player = AVPlayer(url: url)
-                self.player.play()
+                self.player.pause()
                 
                 if !self.isPlay {
                     self.isPlay = true
@@ -167,5 +176,5 @@ class MonomaneTableViewCell: UITableViewCell {
             }
         }
     }
-
+    
 }

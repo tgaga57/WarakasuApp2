@@ -41,16 +41,22 @@ class ConteTableViewCell: UITableViewCell {
     
     // profileimageview
     @IBOutlet weak var profImageView: UIImageView!
+    
     // usernamelabel
     @IBOutlet weak var userName: UILabel!
+    
     // videoview
     @IBOutlet weak var videoView: UIView!
+    
     // 投稿者のコメントラベル
     @IBOutlet weak var commentLabel: UILabel!
+    
     // likeLabel
     @IBOutlet weak var likeLabel: UILabel!
+    
     // お笑いlabel
     @IBOutlet weak var owaraiLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -77,14 +83,13 @@ class ConteTableViewCell: UITableViewCell {
         profImageView.image = decadedProfImage
     }
     
-    
+    // likebutton
     @IBAction func likeButton(_ sender: Any) {
         // likecountに足していく
         likeCount = likeCount + 1
         // likelabelにいいね数を表示
         // labalに表示できるようにString型に変更
         likeLabel.text = String(likeCount)
-        
         
         switch likeCount {
         case (1...5):
@@ -101,6 +106,7 @@ class ConteTableViewCell: UITableViewCell {
             owaraiLabel.text = "神"
         default: break
         }
+        
         // likelistの箱に入れていく
         // 名前
         let likeUserName = userName.text
@@ -119,6 +125,16 @@ class ConteTableViewCell: UITableViewCell {
         db.collection("likeContents").addDocument(data: goodList as! [String : Any])
         print("いいね押されたよ")
         
+    }
+    
+    // スタートボタン
+    @IBAction func videoStartButton(_ sender: Any) {
+        self.player.play()
+    }
+    
+    // ストップボタン
+    @IBAction func videoStopButton(_ sender: Any) {
+        self.player.pause()
     }
     
     
@@ -141,7 +157,7 @@ class ConteTableViewCell: UITableViewCell {
                 print("url:\(url)")
                 // Bundle Resourcesからsample.mp4を読み込んで再生
                 self.player = AVPlayer(url: url)
-                self.player.play()
+                self.player.pause()
                 
                 if !self.isPlay {
                     self.isPlay = true

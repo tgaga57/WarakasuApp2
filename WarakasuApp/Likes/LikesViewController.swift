@@ -90,35 +90,12 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     // 
     cell.set(dict: dict)
     
-    
-//    // プロフィール画像情報
-//    if let profImage = dict["likeUserImage"] {
-//        // NSData型に変換
-//        let dataProfImage = NSData(base64Encoded: profImage as! String, options: .ignoreUnknownCharacters)
-//        // さらにUIImage型に変換
-//        let decadedProfImage = UIImage(data: dataProfImage! as Data)
-//        // 代入
-//        cell.likeuserImage.image = decadedProfImage
-//    } else {
-//
-//        cell.likeuserImage.image = #imageLiteral(resourceName: "宇宙人アイコン")
-//    }
-//
-//    // 名前を反映
-//    cell.likeUserName.text = dict["likeUserName"] as? String
-//
-//    // ③投稿文反映
-//    if let comment = dict["likeComment"] as? String {
-//        cell.likeComment.text = comment
-//    } else {
-//        cell.likeComment.text = ""
-//    }
-//
     return cell
 }
     // セルの高さ
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+        
     }
     
 }

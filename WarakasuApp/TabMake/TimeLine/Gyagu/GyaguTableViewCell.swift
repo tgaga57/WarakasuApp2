@@ -77,7 +77,15 @@ class GyaguTableViewCell: UITableViewCell {
         profImageView.image = decadedProfImage
     }
     
+    // start button
+    @IBAction func videoStartButton(_ sender: Any) {
+        self.player.play()
+    }
     
+    // stop button
+    @IBAction func videoStopButton(_ sender: Any) {
+        self.player.pause()
+    }
     
     // likebutton
     @IBAction func likeButton(_ sender: UIButton) {
@@ -117,6 +125,7 @@ class GyaguTableViewCell: UITableViewCell {
         let base64IconImage = likeUserImage.base64EncodedString(options: .lineLength64Characters) as String
         
         // likeListを入れる
+        
         let goodList: NSDictionary = ["likeName": likeUserName ?? "", "likeComment": likeComment ?? "","likeUserImage": base64IconImage,"createdAt": Timestamp(date: Date())]
         // firebaseにgoodListの情報を保存する
         db.collection("likeContents").addDocument(data: goodList as! [String : Any])
@@ -143,7 +152,8 @@ class GyaguTableViewCell: UITableViewCell {
                 print("url:\(url)")
                 // Bundle Resourcesからsample.mp4を読み込んで再生
                 self.player = AVPlayer(url: url)
-                self.player.play()
+                // 動画はポーズで出させる！
+                self.player.pause()
                 
                 if !self.isPlay {
                     self.isPlay = true
@@ -153,7 +163,6 @@ class GyaguTableViewCell: UITableViewCell {
                     playerLayer.videoGravity = .resizeAspectFill
                     playerLayer.zPosition = -1 // ボタン等よりも後ろに表示
                     self.videoView.layer.insertSublayer(playerLayer, at: 0) // 動画をレイヤーとして追加
-                    
                 } else {
                     if let layer = self.videoView.layer.sublayers?.first {
                         layer.removeFromSuperlayer() //Superlayerから取り除く
