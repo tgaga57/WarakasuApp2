@@ -9,32 +9,23 @@
 import UIKit
 import XLPagerTabStrip
 import FirebaseFirestore
-import FirebaseStorage
-import AVFoundation
 
 class TimeLineViewController: ButtonBarPagerTabStripViewController{
-    
-     // Firebaseで使用するパス
-    let videoPath = "video"
-    
-    // firebase Storage
-    let storage = Storage.storage()
-    
-    // firebase Firestore
-    let db = Firestore.firestore()
-
-    // 動画情報のリスト
-    var videoList: [String] = []
-    // avプレイヤーの情報
-    var player = AVPlayer()
-    // 再生したかどうか
-    var isPlay: Bool = false
-    //自分がどのタブにいるか
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //バーの色
+        settings.style.buttonBarBackgroundColor = UIColor(red: 73/255, green: 72/255, blue: 62/255, alpha: 1)
+        //ボタンの色
+        settings.style.buttonBarItemBackgroundColor = UIColor(red: 73/255, green: 72/255, blue: 62/255, alpha: 1)
+        //セルの文字色
+        settings.style.buttonBarItemTitleColor = UIColor.white
+        //セレクトバーの色
+        settings.style.selectedBarBackgroundColor = UIColor(red: 254/255, green: 0, blue: 124/255, alpha: 1)
+        super.viewDidLoad()
+        
+  
         // Do any additional setup after loading the view.
     }
     
@@ -52,14 +43,16 @@ class TimeLineViewController: ButtonBarPagerTabStripViewController{
         return childViewControllers
     }
     
-    // 投稿ボタン
+    // 投稿画面へ移動するボタン
     @IBAction func tappedPostButton(_ sender: Any) {
-//        print(self.currentIndex)
+        // print(self.currentIndex)
         // 遷移処理
         let storyboard: UIStoryboard = UIStoryboard(name: "Post", bundle: nil)
         let PostViewController = storyboard.instantiateViewController(withIdentifier: "Post") as! PostViewController
+        // タブのカテゴリーのidを渡す！　0＝一発ギャグ １＝ コント 2＝モノマネ
+        PostViewController.categoryId = currentIndex
         self.present(PostViewController, animated: true, completion: nil)
         
     }
-  
+    
 }

@@ -18,5 +18,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "PostViewController.uploadVideoName(videoName:):PostViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "videoName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

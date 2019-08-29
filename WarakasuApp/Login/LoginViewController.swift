@@ -15,15 +15,11 @@ class LoginViewController: UIViewController {
     
     // メールアドレス
     @IBOutlet weak var emailTextFiled: UITextField!
-    // グーグルサインイン
-    // 後で書きます
-    
     // パスワード
     @IBOutlet weak var passWordTextfiled: UITextField!
-   
     // 上位部分のラベル
     @IBOutlet weak var warakasuLabel: LTMorphingLabel!
-  
+    
     //表示制御用タイマー
     private var timer: Timer?
     //String配列のindex用
@@ -171,6 +167,5 @@ class LoginViewController: UIViewController {
         }
     }
     
-
 }
 

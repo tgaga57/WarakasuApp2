@@ -47,7 +47,6 @@ class MypageViewController: UIViewController,UITextFieldDelegate, UIImagePickerC
             // なければ匿名としておく
             userNameText.text = "匿名"
         }
-        
     }
     
     // プロフ写真変更用アクション
@@ -57,13 +56,13 @@ class MypageViewController: UIViewController,UITextFieldDelegate, UIImagePickerC
         // カメラ機能
         let openCamera = UIAlertAction(title: "カメラ", style: .default, handler: {(action: UIAlertAction) in
             //カメラへの遷移処理をかく
-        self.cameraAction(sourceType: .camera)
-                
+            self.cameraAction(sourceType: .camera)
+            
         })
         // アルバム
         let openPhotos = UIAlertAction(title: "アルバム", style: .default, handler: {(acion: UIAlertAction) in
-        // アルバムへの遷移処理を書く
-        self.cameraAction(sourceType: .photoLibrary)
+            // アルバムへの遷移処理を書く
+            self.cameraAction(sourceType: .photoLibrary)
         })
         // キャンセル
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
@@ -73,38 +72,6 @@ class MypageViewController: UIViewController,UITextFieldDelegate, UIImagePickerC
         alert.addAction(cancelAction)
         // 表示
         present(alert, animated: true)
-    }
-    
-    // 決定ボタン
-    @IBAction func save(_ sender: Any) {
-        
-        var data: NSData = NSData()
-        // 写真の確認
-        if let image = profImageView.image {
-            // クオリティーを下げる
-            data = image.jpegData(compressionQuality: 0.1)! as NSData
-        }
-        let base64String = data.base64EncodedString(options: .lineLength64Characters) as String
-        
-        let userName = userNameText.text
-        
-        // アプリの中に保存
-        // プロフ画像の保存
-        UserDefaults.standard.set(base64String, forKey: "profileImage")
-        // ユーザー名の保存
-        UserDefaults.standard.set(userName, forKey: "userNameText")
-    }
-    
-    // ログアウトボタン
-    @IBAction func logout(_ sender: Any) {
-        // ログアウト
-        try! Auth.auth().signOut()
-        // storyboardのfileの特定
-        let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
-        // 遷移先のvcのインスタンス化
-        let VC = storyboard.instantiateViewController(withIdentifier: "Login")
-        // 遷移処理
-        self.present(VC, animated: true)
     }
     
     // カメラ・フォトライブラリへの遷移処理
@@ -128,12 +95,55 @@ class MypageViewController: UIViewController,UITextFieldDelegate, UIImagePickerC
         if let pickedImage = info[.originalImage] as? UIImage {
             // 画面サイズに合わせて
             profImageView.contentMode = .scaleToFill
-            // １　プロフ画像に反映
+            // プロフ画像に反映
             profImageView.image = pickedImage
         }
-        // ２　pickerは閉じる
         // 画像がプロフに反映される
         picker.dismiss(animated: true)
+    }
+    
+    // 決定ボタン
+    @IBAction func save(_ sender: Any) {
+        var data: NSData = NSData()
+        // 写真の確認
+        if let image = profImageView.image {
+            // クオリティーを下げる
+            data = image.jpegData(compressionQuality: 0.1)! as NSData
+        }
+        
+        let base64String = data.base64EncodedString(options: .lineLength64Characters) as String
+        
+        let userName = userNameText.text
+        
+        // アプリの中に保存
+        // プロフ画像の保存
+        UserDefaults.standard.set(base64String, forKey: "profileImage")
+        // ユーザー名の保存
+        UserDefaults.standard.set(userName, forKey: "userName")
+        
+        
+        // showalert
+        let title = "プロフィールを変えました！"
+        let message = "動画を投稿しよう！"
+        let okText = "OK"
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let okayButton = UIAlertAction(title: okText, style: UIAlertAction.Style.cancel, handler: nil)
+        alert.addAction(okayButton)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // ログアウトボタン
+    @IBAction func logout(_ sender: Any) {
+        // ログアウト
+        try! Auth.auth().signOut()
+        // storyboardのfileの特定
+        let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+        // 遷移先のvcのインスタンス化
+        let VC = storyboard.instantiateViewController(withIdentifier: "Login")
+        // 遷移処理
+        self.present(VC, animated: true)
     }
     
     // キーボードを閉じる処理
