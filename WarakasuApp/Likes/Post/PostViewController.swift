@@ -13,6 +13,9 @@ import AVFoundation
 
 class PostViewController: UIViewController {
     
+    // uiimageをインスタンス化
+    let image0 = UIImage(named: "コンピューターの処理完了のアイコン素材")
+    
     // pickerで選択した写真
     var willPostImage: UIImage = UIImage()
     
@@ -46,6 +49,8 @@ class PostViewController: UIViewController {
     // プロフィールの名前
     @IBOutlet weak var profileName: UILabel!
     
+    // uploadButton
+    @IBOutlet weak var uploadButton: UIButton!
     // 動画内容のコメント
     @IBOutlet weak var commentTextView: UITextView!
     // filename
@@ -173,7 +178,7 @@ class PostViewController: UIViewController {
     }
     
     // アップロード
-    func uploadVideo(url: URL, fileName: String) {
+    func uploadVideo(url: URL, fileName: String, completion: @escaping () -> Void) {
         let storageRef = storage.reference()
         let starsRef = storageRef.child("\(videoPath)/\(fileName)")
         
@@ -186,6 +191,7 @@ class PostViewController: UIViewController {
                 print("downloadURL:\(downloadURL)")
                 // 名前情報を登録
                 self.uploadVideoName(videoName: fileName)
+                completion()
             }
         }
 
@@ -217,7 +223,22 @@ extension PostViewController:  UIImagePickerControllerDelegate, UINavigationCont
             let filename = videoURL.lastPathComponent
             print(videoURL)
             print(filename)
-            uploadVideo(url: videoURL, fileName: filename)
+            uploadVideo(url: videoURL, fileName: filename) {
+                // 動画が投稿が選択されたらbuttonのimageを入れ替える!
+                self.uploadButton.setImage(self.image0, for: .normal)
+                self.uploadButton.isEnabled = false
+                
+                // alertでも完了を通知
+                let title = "動画の投稿が完了しました"
+                let message = ""
+                let okText = "OK"
+                
+                let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                let okayButton = UIAlertAction(title: okText, style: UIAlertAction.Style.cancel, handler: nil)
+                alert.addAction(okayButton)
+                self.present(alert, animated: true)
+                
+            }
             picker.dismiss(animated: true, completion: nil)
     }
     

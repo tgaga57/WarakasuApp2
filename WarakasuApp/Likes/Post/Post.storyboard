@@ -127,6 +127,7 @@
                         <outlet property="commentTextView" destination="amt-eA-OVg" id="xfx-HC-ir6"/>
                         <outlet property="profileImageView" destination="XJE-E0-0I8" id="CMl-n6-jS7"/>
                         <outlet property="profileName" destination="rTF-V6-i6u" id="dC9-VT-7ST"/>
+                        <outlet property="uploadButton" destination="4Dc-PM-lNk" id="DPN-iE-Wn2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aSA-G0-Cfk" userLabel="First Responder" sceneMemberID="firstResponder"/>

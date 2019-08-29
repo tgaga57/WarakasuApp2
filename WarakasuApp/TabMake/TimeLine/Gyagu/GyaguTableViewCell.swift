@@ -50,6 +50,12 @@ class GyaguTableViewCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     // お笑いラベル
     @IBOutlet weak var owaraiLabel: UILabel!
+    // 再生停止ボタン
+    @IBOutlet weak var stopVideoButton: UIButton!
+    // 再生ボタン
+    @IBOutlet weak var startVideoButton: UIButton!
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -79,14 +85,12 @@ class GyaguTableViewCell: UITableViewCell {
     
     // start button
     @IBAction func videoStartButton(_ sender: Any) {
-        self.player.play()
+            self.player.play()
     }
-    
     // stop button
     @IBAction func videoStopButton(_ sender: Any) {
-        self.player.pause()
+             self.player.pause()
     }
-    
     // likebutton
     @IBAction func likeButton(_ sender: UIButton) {
         
@@ -131,7 +135,6 @@ class GyaguTableViewCell: UITableViewCell {
         db.collection("likeContents").addDocument(data: goodList as! [String : Any])
         print("いいね押されたよ")
     }
-    
     
     func videoPlay(filename: String) {
         let storageRef = storage.reference()

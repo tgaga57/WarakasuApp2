@@ -100,7 +100,7 @@
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.94104110996661594" green="0.94104110996661594" blue="0.94104110996661594" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.25779474431818183" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="tan-us-gqB" secondAttribute="bottom" constant="5" id="79H-aa-6HP"/>
                                                         <constraint firstAttribute="bottom" secondItem="hBs-Gq-rXp" secondAttribute="bottom" constant="5" id="M6I-Rq-grS"/>
@@ -156,6 +156,8 @@
                                             <outlet property="likeLabel" destination="FkI-wI-mDX" id="Ajn-wT-KT4"/>
                                             <outlet property="owaraiLabel" destination="0iH-oX-nuM" id="lpn-6O-RZj"/>
                                             <outlet property="profImageView" destination="ew5-fk-xi3" id="ZeO-7a-EiJ"/>
+                                            <outlet property="startVideoButton" destination="tan-us-gqB" id="zOV-8S-tTM"/>
+                                            <outlet property="stopVideoButton" destination="hBs-Gq-rXp" id="QOP-l5-gZR"/>
                                             <outlet property="userNameLabel" destination="HSF-fJ-maH" id="8oD-Tx-16k"/>
                                             <outlet property="videoView" destination="jl5-oY-r4w" id="gu1-dw-vp7"/>
                                         </connections>

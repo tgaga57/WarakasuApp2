@@ -88,7 +88,6 @@ class GyaguViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
         tableView.reloadData()
         // リフレッシュを止める
         refreshControl.endRefreshing()
-        
     }
     
     // セルの数
