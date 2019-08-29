@@ -72,7 +72,6 @@ class LikesViewController: UIViewController,UITableViewDataSource, UITableViewDe
         
     }
     
-
 // セクションの中のセルの数
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     // 投稿情報の数に設定

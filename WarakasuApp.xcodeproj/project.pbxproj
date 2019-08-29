@@ -108,8 +108,8 @@
 		B105B092231298EC00D0677C /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				B105B0932312990500D0677C /* PostViewController.swift */,
 				B105B0952312991000D0677C /* Post.storyboard */,
+				B105B0932312990500D0677C /* PostViewController.swift */,
 			);
 			name = Post;
 			path = Likes/Post;

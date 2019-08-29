@@ -19,8 +19,6 @@ class PostViewController: UIViewController {
     // Firebaseで使用するパス
     var videoPath = ""
     
-    
-    
     // firebase Storage
     let storage = Storage.storage()
     
@@ -114,8 +112,7 @@ class PostViewController: UIViewController {
     
     // 動画を載せるボタン
     @IBAction func UpVideo(_ sender: UIButton) {
-        pickVideo()
-       
+            pickVideo()
     }
     
     func pickVideo() {
@@ -223,7 +220,6 @@ extension PostViewController:  UIImagePickerControllerDelegate, UINavigationCont
             print(filename)
             uploadVideo(url: videoURL, fileName: filename)
             picker.dismiss(animated: true, completion: nil)
-        
     }
     
 }

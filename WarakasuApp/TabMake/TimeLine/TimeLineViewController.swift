@@ -15,7 +15,17 @@ class TimeLineViewController: ButtonBarPagerTabStripViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //バーの色
+        settings.style.buttonBarBackgroundColor = UIColor(red: 73/255, green: 72/255, blue: 62/255, alpha: 1)
+        //ボタンの色
+        settings.style.buttonBarItemBackgroundColor = UIColor(red: 73/255, green: 72/255, blue: 62/255, alpha: 1)
+        //セルの文字色
+        settings.style.buttonBarItemTitleColor = UIColor.white
+        //セレクトバーの色
+        settings.style.selectedBarBackgroundColor = UIColor(red: 254/255, green: 0, blue: 124/255, alpha: 1)
+        super.viewDidLoad()
         
+  
         // Do any additional setup after loading the view.
     }
     
