@@ -26,6 +26,9 @@ class GyaguTableViewCell: UITableViewCell {
     // ストレージ使うときに必要
     let storage = Storage.storage()
     
+    // likeしたのを格納するはこ
+    var likeListItems = [NSDictionary]()
+    
     // AVプレイヤー情報
     var player = AVPlayer()
     
@@ -56,13 +59,29 @@ class GyaguTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        // Configure the view for the selected state
+    }
+    
+    // セル内のコメント、名前、写真、動画が反映
+    func set(dict: NSDictionary) {
+        commentLabel.text = dict["comment"] as? String
+        videoPlay(filename: dict["filename"] as! String)
+        userNameLabel.text = dict["userName"] as? String
+        
+        // 画像情報
+        let profImage = dict["profileImage"]
+        // NSData型に変換
+        let dataProfImage = NSData(base64Encoded: profImage as! String, options: .ignoreUnknownCharacters)
+        // さらにUIImage型に変換
+        let decadedProfImage = UIImage(data: dataProfImage! as Data)
+        // profileImageViewへ代入
+        profImageView.image = decadedProfImage
     }
     
     
+    
     // likebutton
-    @IBAction func likeButton(_ sender: Any) {
-      
+    @IBAction func likeButton(_ sender: UIButton) {
+        
         // likecountに足していく
         likeCount = likeCount + 1
         // likelabelにいいね数を表示
@@ -84,22 +103,26 @@ class GyaguTableViewCell: UITableViewCell {
             owaraiLabel.text = "神"
         default: break
         }
+        
+        // likelistの箱に入れていく
+        // 名前
+        let likeUserName = userNameLabel.text
+        // 投稿文
+        let likeComment = commentLabel.text
+        // プロフィール画像
+        var likeUserImage: NSData = NSData()
+        if let iconImage = profImageView.image {
+            likeUserImage = iconImage.jpegData(compressionQuality: 0.1)! as NSData
+        }
+        let base64IconImage = likeUserImage.base64EncodedString(options: .lineLength64Characters) as String
+        
+        // likeListを入れる
+        let goodList: NSDictionary = ["likeName": likeUserName ?? "", "likeComment": likeComment ?? "","likeUserImage": base64IconImage,"createdAt": Timestamp(date: Date())]
+        // firebaseにgoodListの情報を保存する
+        db.collection("likeContents").addDocument(data: goodList as! [String : Any])
+        print("いいね押されたよ")
     }
     
-    func set(dict: NSDictionary) {
-        commentLabel.text = dict["comment"] as? String
-        videoPlay(filename: dict["filename"] as! String)
-        userNameLabel.text = dict["userName"] as? String
-        
-        // 画像情報
-        let profImage = dict["profileImage"]
-        // NSData型に変換
-        let dataProfImage = NSData(base64Encoded: profImage as! String, options: .ignoreUnknownCharacters)
-        // さらにUIImage型に変換
-        let decadedProfImage = UIImage(data: dataProfImage! as Data)
-        // profileImageViewへ代入
-        profImageView.image = decadedProfImage
-    }
     
     func videoPlay(filename: String) {
         let storageRef = storage.reference()
@@ -144,6 +167,4 @@ class GyaguTableViewCell: UITableViewCell {
             }
         }
     }
-    
-    
 }

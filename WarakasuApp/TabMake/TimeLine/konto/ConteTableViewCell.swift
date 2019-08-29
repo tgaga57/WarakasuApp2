@@ -10,8 +10,13 @@ import UIKit
 import FirebaseStorage
 import AVFoundation
 import AVKit
+import Firebase
 
 class ConteTableViewCell: UITableViewCell {
+    
+    
+    // firebase
+    let db = Firestore.firestore()
     
     // items
     var item: NSDictionary?
@@ -22,12 +27,15 @@ class ConteTableViewCell: UITableViewCell {
     // AVプレイヤー情報
     var player = AVPlayer()
     
+    // likeしたのを格納するはこ
+    var likeListItems = [NSDictionary]()
+    
     // likecount
     var likeCount: Int = 0
     
     // 再生したか否か
     var isPlay: Bool = false
-
+    
     // firebaseのコレクション名
     let videoPath: String = "Conte"
     
@@ -77,6 +85,7 @@ class ConteTableViewCell: UITableViewCell {
         // labalに表示できるようにString型に変更
         likeLabel.text = String(likeCount)
         
+        
         switch likeCount {
         case (1...5):
             owaraiLabel.text = "まだまだ"
@@ -92,7 +101,24 @@ class ConteTableViewCell: UITableViewCell {
             owaraiLabel.text = "神"
         default: break
         }
-    
+        // likelistの箱に入れていく
+        // 名前
+        let likeUserName = userName.text
+        // 投稿文
+        let likeComment = commentLabel.text
+        // プロフィール画像
+        var likeUserImage: NSData = NSData()
+        if let iconImage = profImageView.image {
+            likeUserImage = iconImage.jpegData(compressionQuality: 0.1)! as NSData
+        }
+        let base64IconImage = likeUserImage.base64EncodedString(options: .lineLength64Characters) as String
+        
+        // likeListを入れる
+        let goodList: NSDictionary = ["likeName": likeUserName ?? "", "likeComment": likeComment ?? "","likeUserImage": base64IconImage,"createdAt": Timestamp(date: Date())]
+        // firebaseにgoodListの情報を保存する
+        db.collection("likeContents").addDocument(data: goodList as! [String : Any])
+        print("いいね押されたよ")
+        
     }
     
     

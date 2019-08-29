@@ -53,14 +53,16 @@ class MonomaneViewController: UIViewController,IndicatorInfoProvider,UITableView
         // 名前、日時、コメント、動画、プロフ画像
         fetch()
         
-        // タイムラインを降順に
-        db.collection("Imitation").order(by: "createdAt", descending: true).limit(to: 10)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetch()
     }
     
     // データの取得
     func fetch() {
-        // getで一発ギャグのコレクションを取得
-        db.collection("Imitation").getDocuments() {(querySnapshot, err) in
+        // getでモノマネのコレクションを取得
+        db.collection("Imitation").order(by: "crearedAt", descending: true).getDocuments() {(querySnapshot, err) in
             // tempItemsという変数を一時的に作成
             var tempItems = [NSDictionary]()
             // for文で回し`item`に格納

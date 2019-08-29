@@ -52,14 +52,17 @@ class GyaguViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
         tableView.dataSource = self
         // コメント、名前、プロフィール、日時を取得
         fetch()
-        // タイムラインを降順に
-        db.collection("Gyagu").order(by: "createdAt", descending: true).limit(to: 10)
+    
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+      fetch()
     }
     
     // データの取得
     func fetch() {
         // getで一発ギャグのコレクションを取得
-        db.collection("Gyagu").getDocuments() {(querySnapshot, err) in
+        db.collection("Gyagu").order(by: "createdAt",descending: true).getDocuments() {(querySnapshot, err) in
             // tempItemsという変数を一時的に作成
             var tempItems = [NSDictionary]()
             // for文で回し`item`に格納
@@ -102,12 +105,14 @@ class GyaguViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
         cell.selectionStyle = .none
         // itemsの中からindexpathのrow番目を取得
         let dict = items[(indexPath as NSIndexPath).row]
-     
-        // cellviewcontloorに飛ばす
+        // cellviewの情報を渡す
+        
+       //  cell.set(dict: dict)
         cell.set(dict: dict)
         
         return cell
     }
+    
     // セルの高さ
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 500

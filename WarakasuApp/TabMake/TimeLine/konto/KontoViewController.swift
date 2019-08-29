@@ -26,7 +26,6 @@ class KontoViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
     // tableview
     @IBOutlet weak var tableView: UITableView!
     
-    
     // 投稿内容を格納する
     var items = [NSDictionary]()
     
@@ -49,17 +48,18 @@ class KontoViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
         // tableViewのデリゲート接続
         tableView.delegate = self
         tableView.dataSource = self
-        // 名前、日時、コメント、動画、プロフ画像
+        // 名前、日時、コメント、動画、プロフ画像,降順に投稿
         fetch()
-        
-        // タイムラインを降順に
-        db.collection("Conte").order(by: "createdAt", descending: true).limit(to: 10)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetch()
     }
     
     // データの取得
     func fetch() {
-        // getで一発ギャグのコレクションを取得
-        db.collection("Conte").getDocuments() {(querySnapshot, err) in
+        // getでモノマネのコレクションを取得
+        db.collection("Conte").order(by: "createdAt", descending: true).getDocuments() {(querySnapshot, err) in
             // tempItemsという変数を一時的に作成
             var tempItems = [NSDictionary]()
             // for文で回し`item`に格納

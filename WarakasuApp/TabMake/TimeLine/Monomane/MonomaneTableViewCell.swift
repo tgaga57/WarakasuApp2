@@ -10,11 +10,18 @@ import UIKit
 import FirebaseStorage
 import AVFoundation
 import AVKit
+import Firebase
 
 class MonomaneTableViewCell: UITableViewCell {
 
-    // items
+    // firebase
+    let db = Firestore.firestore()
+    
+    // item
     var item: NSDictionary?
+    
+    // likeしたのを格納するはこ
+    var likeListItems = [NSDictionary]()
     
     // ストレージ使うときに必要
     let storage = Storage.storage()
@@ -59,6 +66,7 @@ class MonomaneTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
     // likebutton
     @IBAction func likeButton(_ sender: Any) {
         // likecountに足していく
@@ -66,7 +74,7 @@ class MonomaneTableViewCell: UITableViewCell {
         // likelabelにいいね数を表示
         // labalに表示できるようにString型に変更
         likeLabel.text = String(likeCount)
-        
+    
         switch likeCount {
         case (1...5):
             owaraiLabel.text = "まだまだ"
@@ -82,6 +90,24 @@ class MonomaneTableViewCell: UITableViewCell {
             owaraiLabel.text = "神"
         default: break
         }
+        
+        // likelistの箱に入れていく
+        // 名前
+        let likeUserName = nameLabel.text
+        // 投稿文
+        let likeComment = CommentLabel.text
+        // プロフィール画像
+        var likeUserImage: NSData = NSData()
+        if let iconImage = profImageView.image {
+            likeUserImage = iconImage.jpegData(compressionQuality: 0.1)! as NSData
+        }
+        let base64IconImage = likeUserImage.base64EncodedString(options: .lineLength64Characters) as String
+        
+        // likeListを入れる
+        let goodList: NSDictionary = ["likeName": likeUserName ?? "", "likeComment": likeComment ?? "","likeUserImage": base64IconImage,"createdAt": Timestamp(date: Date())]
+        // firebaseにgoodListの情報を保存する
+        db.collection("likeContents").addDocument(data: goodList as! [String : Any])
+        print("いいね押されたよ")
     }
     
     func set(dict: NSDictionary) {
