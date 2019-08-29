@@ -115,7 +115,6 @@ class MonomaneTableViewCell: UITableViewCell {
         }
         let base64IconImage = likeUserImage.base64EncodedString(options: .lineLength64Characters) as String
         
-        
         // likeListを入れる
         let goodList: NSDictionary = ["likeName": likeUserName ?? "", "likeComment": likeComment ?? "","likeUserImage": base64IconImage,"createdAt": Timestamp(date: Date())]
         // firebaseにgoodListの情報を保存する

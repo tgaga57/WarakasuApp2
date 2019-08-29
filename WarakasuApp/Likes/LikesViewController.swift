@@ -22,14 +22,13 @@ class LikesViewController: UIViewController,UITableViewDataSource, UITableViewDe
     
     // tableview
     @IBOutlet weak var tableView: UITableView!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.delegate = self
         tableView.dataSource = self
-
+        
         // firebaseから情報を取ってくる
         fetch()
         refresh()
@@ -43,21 +42,21 @@ class LikesViewController: UIViewController,UITableViewDataSource, UITableViewDe
     func fetch() {
         // getで一発ギャグのコレクションを取得
         db.collection("likeContents").order(by: "createdAt",descending: true).getDocuments() {(querySnapshot, err) in
-        // tempItemsという変数を一時的に作成
-        var tempItems = [NSDictionary]()
-        // for文で回し`item`に格納
-        for item in querySnapshot!.documents {
-            // item内のデータをdictという変数に入れる
-            let dict = item.data()
-            // dictをtempItemsに入れる
-            tempItems.append(dict as NSDictionary)
+            // tempItemsという変数を一時的に作成
+            var tempItems = [NSDictionary]()
+            // for文で回し`item`に格納
+            for item in querySnapshot!.documents {
+                // item内のデータをdictという変数に入れる
+                let dict = item.data()
+                // dictをtempItemsに入れる
+                tempItems.append(dict as NSDictionary)
+            }
+            // tempItemsをitems(クラスの変数として定義した)に入れる
+            self.likeContents = tempItems
+            // リロード
+            self.tableView.reloadData()
         }
-        // tempItemsをitems(クラスの変数として定義した)に入れる
-        self.likeContents = tempItems
-        // リロード
-        self.tableView.reloadData()
     }
-}
     
     // 更新
     @objc func refresh() {
@@ -72,25 +71,25 @@ class LikesViewController: UIViewController,UITableViewDataSource, UITableViewDe
         
     }
     
-// セクションの中のセルの数
-func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    // 投稿情報の数に設定
-    return likeContents.count
-}
-
-// セルの設定
-func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "LikeList", for: indexPath) as! LikeListTableViewCell
+    // セクションの中のセルの数
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // 投稿情報の数に設定
+        return likeContents.count
+    }
     
-    // セルを選択不可にする
-    cell.selectionStyle = .none
-    
-    let dict = likeContents[(indexPath as NSIndexPath).row]
-    // 
-    cell.set(dict: dict)
-    
-    return cell
-}
+    // セルの設定
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LikeList", for: indexPath) as! LikeListTableViewCell
+        
+        // セルを選択不可にする
+        cell.selectionStyle = .none
+        
+        let dict = likeContents[(indexPath as NSIndexPath).row]
+        //
+        cell.set(dict: dict)
+        
+        return cell
+    }
     // セルの高さ
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150

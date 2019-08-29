@@ -59,7 +59,6 @@ class MonomaneViewController: UIViewController,IndicatorInfoProvider,UITableView
         fetch()
     }
     
-
     // データの取得
     func fetch() {
         // getでモノマネのコレクションを取得
@@ -103,13 +102,13 @@ class MonomaneViewController: UIViewController,IndicatorInfoProvider,UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "ImitationCell", for: indexPath) as! MonomaneTableViewCell
         // 選択不可にする
         cell.selectionStyle = .none
-
+        
         // itemsの中からindexpathのrow番目を取得
         let dict = items[(indexPath as NSIndexPath).row]
         
         // cellviewcontloorに飛ばす
         cell.set(dict: dict)
-     
+        
         return cell
     }
     // セルの高さ

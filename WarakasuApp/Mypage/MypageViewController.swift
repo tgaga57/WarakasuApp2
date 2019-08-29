@@ -56,13 +56,13 @@ class MypageViewController: UIViewController,UITextFieldDelegate, UIImagePickerC
         // カメラ機能
         let openCamera = UIAlertAction(title: "カメラ", style: .default, handler: {(action: UIAlertAction) in
             //カメラへの遷移処理をかく
-        self.cameraAction(sourceType: .camera)
-                
+            self.cameraAction(sourceType: .camera)
+            
         })
         // アルバム
         let openPhotos = UIAlertAction(title: "アルバム", style: .default, handler: {(acion: UIAlertAction) in
-        // アルバムへの遷移処理を書く
-        self.cameraAction(sourceType: .photoLibrary)
+            // アルバムへの遷移処理を書く
+            self.cameraAction(sourceType: .photoLibrary)
         })
         // キャンセル
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
@@ -120,20 +120,19 @@ class MypageViewController: UIViewController,UITextFieldDelegate, UIImagePickerC
         UserDefaults.standard.set(base64String, forKey: "profileImage")
         // ユーザー名の保存
         UserDefaults.standard.set(userName, forKey: "userName")
-    
+        
         
         // showalert
-            let title = "プロフィールを変えました！"
-            let message = "動画を投稿しよう！"
-            let okText = "OK"
-            
+        let title = "プロフィールを変えました！"
+        let message = "動画を投稿しよう！"
+        let okText = "OK"
+        
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         let okayButton = UIAlertAction(title: okText, style: UIAlertAction.Style.cancel, handler: nil)
-            alert.addAction(okayButton)
-            
-            present(alert, animated: true, completion: nil)
+        alert.addAction(okayButton)
         
-        }
+        present(alert, animated: true, completion: nil)
+    }
     
     // ログアウトボタン
     @IBAction func logout(_ sender: Any) {

@@ -99,7 +99,7 @@ class PostViewController: UIViewController {
             // なければアイコン画像をいれておく
             profileImageView.image = #imageLiteral(resourceName: "宇宙人アイコン")
         }
-
+        
         // 名前情報
         if let profName = UserDefaults.standard.object(forKey: "userName") as? String {
             // profileNameLabelへ代入
@@ -115,7 +115,7 @@ class PostViewController: UIViewController {
     
     // 動画を載せるボタン
     @IBAction func UpVideo(_ sender: UIButton) {
-            pickVideo()
+        pickVideo()
     }
     
     func pickVideo() {
@@ -134,7 +134,7 @@ class PostViewController: UIViewController {
             
         }
     }
-
+    
     // 投稿ボタン
     @IBAction func PostAll(_ sender: Any) {
         
@@ -170,7 +170,7 @@ class PostViewController: UIViewController {
         // 画面を消す
         self.dismiss(animated: true)
     }
-
+    
     // タイムラインに戻るボタン
     @IBAction func Back(_ sender: Any) {
         // 前の画面に戻る
@@ -194,7 +194,7 @@ class PostViewController: UIViewController {
                 completion()
             }
         }
-
+        
     }
     
     // アップロードした動画名をDBに保存
@@ -220,26 +220,26 @@ extension PostViewController:  UIImagePickerControllerDelegate, UINavigationCont
             return
         }
         
-            let filename = videoURL.lastPathComponent
-            print(videoURL)
-            print(filename)
-            uploadVideo(url: videoURL, fileName: filename) {
-                // 動画が投稿が選択されたらbuttonのimageを入れ替える!
-                self.uploadButton.setImage(self.image0, for: .normal)
-                self.uploadButton.isEnabled = false
-                
-                // alertでも完了を通知
-                let title = "動画の投稿が完了しました"
-                let message = ""
-                let okText = "OK"
-                
-                let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-                let okayButton = UIAlertAction(title: okText, style: UIAlertAction.Style.cancel, handler: nil)
-                alert.addAction(okayButton)
-                self.present(alert, animated: true)
-                
-            }
-            picker.dismiss(animated: true, completion: nil)
+        let filename = videoURL.lastPathComponent
+        print(videoURL)
+        print(filename)
+        uploadVideo(url: videoURL, fileName: filename) {
+            // 動画が投稿が選択されたらbuttonのimageを入れ替える!
+            self.uploadButton.setImage(self.image0, for: .normal)
+            self.uploadButton.isEnabled = false
+            
+            // alertでも完了を通知
+            let title = "動画の投稿が完了しました"
+            let message = ""
+            let okText = "OK"
+            
+            let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            let okayButton = UIAlertAction(title: okText, style: UIAlertAction.Style.cancel, handler: nil)
+            alert.addAction(okayButton)
+            self.present(alert, animated: true)
+            
+        }
+        picker.dismiss(animated: true, completion: nil)
     }
     
 }

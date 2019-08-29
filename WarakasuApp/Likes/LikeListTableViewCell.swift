@@ -43,5 +43,5 @@ class LikeListTableViewCell: UITableViewCell {
         // profileImageViewへ代入
         likeuserImage.image = decadedProfImage
     }
-
+    
 }

@@ -54,9 +54,9 @@ class GyaguViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
         fetch()
         refresh()
     }
-    
+    // タイムラインを降順にするため
     override func viewWillAppear(_ animated: Bool) {
-      fetch()
+        fetch()
     }
     // データの取得
     func fetch() {
@@ -105,7 +105,7 @@ class GyaguViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
         let dict = items[(indexPath as NSIndexPath).row]
         // cellviewの情報を渡す
         
-       //  cell.set(dict: dict)
+        //  cell.set(dict: dict)
         cell.set(dict: dict)
         
         return cell

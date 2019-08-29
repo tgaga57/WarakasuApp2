@@ -55,8 +55,6 @@ class GyaguTableViewCell: UITableViewCell {
     // 再生ボタン
     @IBOutlet weak var startVideoButton: UIButton!
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -85,11 +83,11 @@ class GyaguTableViewCell: UITableViewCell {
     
     // start button
     @IBAction func videoStartButton(_ sender: Any) {
-            self.player.play()
+        self.player.play()
     }
     // stop button
     @IBAction func videoStopButton(_ sender: Any) {
-             self.player.pause()
+        self.player.pause()
     }
     // likebutton
     @IBAction func likeButton(_ sender: UIButton) {
