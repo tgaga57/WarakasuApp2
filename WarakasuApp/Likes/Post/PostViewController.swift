@@ -39,8 +39,6 @@ class PostViewController: UIViewController {
     
     //動画が投稿されたときに使われる変数
     var isSelect : Bool = false
-    // 投稿した動画確認用
-    @IBOutlet weak var videoView: UIImageView!
     
     // プロフィール画像
     @IBOutlet weak var profileImageView: UIImageView!
@@ -207,6 +205,7 @@ class PostViewController: UIViewController {
 }
 
 extension PostViewController:  UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     // ピッカーで動画が選択された
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

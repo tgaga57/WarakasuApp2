@@ -59,7 +59,7 @@ class KontoViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
     
     // データの取得
     func fetch() {
-        // getでモノマネのコレクションを取得
+        // getでコントのコレクションを取得
         db.collection("Conte").order(by: "createdAt", descending: true).getDocuments() {(querySnapshot, err) in
             // tempItemsという変数を一時的に作成
             var tempItems = [NSDictionary]()
