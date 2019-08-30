@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B10011C72318396100F656B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B10011C62318396100F656B7 /* GoogleService-Info.plist */; };
 		B105B0942312990500D0677C /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B105B0932312990500D0677C /* PostViewController.swift */; };
 		B105B0962312991000D0677C /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B105B0952312991000D0677C /* Post.storyboard */; };
 		B1197069230A38F400575571 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1197068230A38F400575571 /* AppDelegate.swift */; };
@@ -29,13 +30,13 @@
 		B154AFCB23162D4A009BED48 /* ConteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B154AFCA23162D4A009BED48 /* ConteTableViewCell.swift */; };
 		B154AFCD23163561009BED48 /* GyaguTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B154AFCC23163561009BED48 /* GyaguTableViewCell.swift */; };
 		B1E8BDAF2316E2A600BC524B /* LikeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8BDAE2316E2A600BC524B /* LikeListTableViewCell.swift */; };
-		B1E8BDB32317973F00BC524B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1E8BDB22317973F00BC524B /* GoogleService-Info.plist */; };
 		CB7ECF19C90C4B43CF077249 /* Pods_WarakasuApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B357137C2A0E5D723ABE4309 /* Pods_WarakasuApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		12FCFB7442291D5DDA4C1F7E /* Pods-WarakasuApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WarakasuApp.release.xcconfig"; path = "Target Support Files/Pods-WarakasuApp/Pods-WarakasuApp.release.xcconfig"; sourceTree = "<group>"; };
 		210BEF49D95070C8CD897C01 /* Pods-WarakasuApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WarakasuApp.debug.xcconfig"; path = "Target Support Files/Pods-WarakasuApp/Pods-WarakasuApp.debug.xcconfig"; sourceTree = "<group>"; };
+		B10011C62318396100F656B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B105B0932312990500D0677C /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		B105B0952312991000D0677C /* Post.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
 		B1197065230A38F400575571 /* WarakasuApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WarakasuApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,7 +61,6 @@
 		B154AFCA23162D4A009BED48 /* ConteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConteTableViewCell.swift; sourceTree = "<group>"; };
 		B154AFCC23163561009BED48 /* GyaguTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyaguTableViewCell.swift; sourceTree = "<group>"; };
 		B1E8BDAE2316E2A600BC524B /* LikeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListTableViewCell.swift; sourceTree = "<group>"; };
-		B1E8BDB22317973F00BC524B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B357137C2A0E5D723ABE4309 /* Pods_WarakasuApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WarakasuApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -146,7 +146,7 @@
 				B119706F230A38F400575571 /* Assets.xcassets */,
 				B1197071230A38F400575571 /* LaunchScreen.storyboard */,
 				B1197074230A38F400575571 /* Info.plist */,
-				B1E8BDB22317973F00BC524B /* GoogleService-Info.plist */,
+				B10011C62318396100F656B7 /* GoogleService-Info.plist */,
 			);
 			path = WarakasuApp;
 			sourceTree = "<group>";
@@ -279,7 +279,7 @@
 			files = (
 				B1197073230A38F400575571 /* LaunchScreen.storyboard in Resources */,
 				B11BF365230FC3D90079A43A /* Gyagu.storyboard in Resources */,
-				B1E8BDB32317973F00BC524B /* GoogleService-Info.plist in Resources */,
+				B10011C72318396100F656B7 /* GoogleService-Info.plist in Resources */,
 				B11BF368230FC5D10079A43A /* Konto.storyboard in Resources */,
 				B1197080230A5DB300575571 /* Login.storyboard in Resources */,
 				B105B0962312991000D0677C /* Post.storyboard in Resources */,
