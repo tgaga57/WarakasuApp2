@@ -34,6 +34,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                </userDefinedRuntimeAttributes>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投稿内容を書いてください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSF-j6-psd">
                                 <rect key="frame" x="0.0" y="305.5" width="320" height="23"/>
@@ -61,11 +64,10 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dc-PM-lNk">
-                                <rect key="frame" x="60" y="140.5" width="200" height="140"/>
+                                <rect key="frame" x="20" y="140.5" width="280" height="140"/>
                                 <color key="backgroundColor" red="0.79822515055702181" green="0.79822515055702181" blue="0.79822515055702181" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="B81-Uo-7f2"/>
-                                    <constraint firstAttribute="width" constant="200" id="Ldu-WJ-tOU"/>
                                 </constraints>
                                 <state key="normal" image="アップロードアイコン (1)"/>
                                 <connections>
@@ -81,6 +83,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Warakasu"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="PostAll:" destination="txA-Nt-NuA" eventType="touchUpInside" id="ppx-jq-wgx"/>
                                 </connections>
@@ -108,6 +113,7 @@
                             <constraint firstItem="A1I-kI-7Vl" firstAttribute="trailing" secondItem="LSF-j6-psd" secondAttribute="trailing" id="Pgs-f4-kdN"/>
                             <constraint firstItem="amt-eA-OVg" firstAttribute="top" secondItem="LSF-j6-psd" secondAttribute="bottom" constant="15" id="PrV-5j-WDX"/>
                             <constraint firstItem="eeH-S5-62L" firstAttribute="leading" secondItem="A1I-kI-7Vl" secondAttribute="leading" constant="40" id="RQV-2j-6Ia"/>
+                            <constraint firstItem="A1I-kI-7Vl" firstAttribute="trailing" secondItem="4Dc-PM-lNk" secondAttribute="trailing" constant="20" id="YJN-yV-hDs"/>
                             <constraint firstItem="ehy-l5-8RX" firstAttribute="top" secondItem="amt-eA-OVg" secondAttribute="bottom" constant="25" id="YTI-rv-B4d"/>
                             <constraint firstItem="i1W-kS-rrx" firstAttribute="leading" secondItem="A1I-kI-7Vl" secondAttribute="leading" constant="8" id="atb-lL-YDm"/>
                             <constraint firstItem="eeH-S5-62L" firstAttribute="top" secondItem="gy3-cv-PX9" secondAttribute="bottom" constant="13.5" id="bBj-O5-wRS"/>
@@ -119,6 +125,7 @@
                             <constraint firstItem="ehy-l5-8RX" firstAttribute="centerX" secondItem="qlA-pG-d4M" secondAttribute="centerX" id="sCh-n5-XAP"/>
                             <constraint firstItem="gy3-cv-PX9" firstAttribute="leading" secondItem="A1I-kI-7Vl" secondAttribute="leading" id="tTN-Un-Yxi"/>
                             <constraint firstItem="amt-eA-OVg" firstAttribute="leading" secondItem="A1I-kI-7Vl" secondAttribute="leading" constant="20" id="u1u-2F-fJG"/>
+                            <constraint firstItem="4Dc-PM-lNk" firstAttribute="leading" secondItem="A1I-kI-7Vl" secondAttribute="leading" constant="20" id="uO4-ra-FMw"/>
                             <constraint firstItem="amt-eA-OVg" firstAttribute="centerX" secondItem="qlA-pG-d4M" secondAttribute="centerX" id="zno-Vk-5UE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A1I-kI-7Vl"/>

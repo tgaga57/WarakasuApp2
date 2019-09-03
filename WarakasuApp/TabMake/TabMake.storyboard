@@ -124,7 +124,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mypageを編集" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQN-vG-WSS">
                                 <rect key="frame" x="0.0" y="80" width="320" height="30"/>
                                 <color key="backgroundColor" red="0.39500098319999999" green="0.75364841680000005" blue="0.84142931269999999" alpha="0.87411221589999999" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -145,47 +145,56 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHr-4C-Pb5">
-                                <rect key="frame" x="110" y="448" width="100" height="30"/>
+                                <rect key="frame" x="85" y="456" width="150" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.95015238300000004" blue="0.0065655070919999996" alpha="0.68508522729999999" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Ag9-sP-XB4"/>
-                                    <constraint firstAttribute="height" constant="30" id="Uwo-l2-MUh"/>
+                                    <constraint firstAttribute="width" constant="150" id="Ag9-sP-XB4"/>
+                                    <constraint firstAttribute="height" constant="40" id="Uwo-l2-MUh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
                                 <state key="normal" title="決定"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="save:" destination="rRu-Mm-NoK" eventType="touchUpInside" id="mE4-pI-og6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3f-72-Neu">
-                                <rect key="frame" x="216" y="485" width="100" height="30"/>
+                                <rect key="frame" x="260" y="459" width="60" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.95015238300000004" blue="0.0065655070919999996" alpha="0.68508522729999999" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="aBj-Ft-Agn"/>
+                                    <constraint firstAttribute="width" constant="60" id="Qzu-kF-iqn"/>
+                                    <constraint firstAttribute="height" constant="60" id="scV-z6-Xoj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                 <state key="normal" title="LogOut"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="logout:" destination="rRu-Mm-NoK" eventType="touchUpInside" id="0ko-cN-EeU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7N-0w-ZvK">
-                                <rect key="frame" x="110" y="396" width="100" height="40"/>
+                                <rect key="frame" x="85" y="396" width="150" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.95015238300000004" blue="0.0065655070919999996" alpha="0.68508522729999999" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="EUD-wq-E9k"/>
+                                    <constraint firstAttribute="width" constant="150" id="EUD-wq-E9k"/>
                                     <constraint firstAttribute="height" constant="40" id="qXE-cm-2yG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
                                 <state key="normal" title="画像を編集"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="changeProfPhoto:" destination="rRu-Mm-NoK" eventType="touchUpInside" id="rap-Vl-m1g"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.89983276328240791" green="1" blue="0.92472298357895621" alpha="0.81511008522727268" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="2uL-gv-kWo" firstAttribute="trailing" secondItem="F3f-72-Neu" secondAttribute="trailing" constant="4" id="1Cy-eY-Ddc"/>
                             <constraint firstItem="IQN-vG-WSS" firstAttribute="top" secondItem="2uL-gv-kWo" secondAttribute="top" constant="16" id="2zm-QI-Szl"/>
                             <constraint firstItem="IQN-vG-WSS" firstAttribute="leading" secondItem="2uL-gv-kWo" secondAttribute="leading" id="6qh-4o-pJd"/>
                             <constraint firstItem="Ito-1p-PFH" firstAttribute="leading" secondItem="2uL-gv-kWo" secondAttribute="leading" id="B8X-62-2IU"/>
@@ -195,11 +204,12 @@
                             <constraint firstItem="2uL-gv-kWo" firstAttribute="trailing" secondItem="IQN-vG-WSS" secondAttribute="trailing" id="ODo-Bg-KhO"/>
                             <constraint firstItem="kHr-4C-Pb5" firstAttribute="centerX" secondItem="l5V-5I-atj" secondAttribute="centerX" id="ZBn-Wy-wBw"/>
                             <constraint firstItem="V54-gK-Q9U" firstAttribute="centerX" secondItem="l5V-5I-atj" secondAttribute="centerX" id="a0q-Pl-N35"/>
-                            <constraint firstItem="2uL-gv-kWo" firstAttribute="bottom" secondItem="F3f-72-Neu" secondAttribute="bottom" constant="4" id="hIb-9f-cRO"/>
                             <constraint firstItem="Ito-1p-PFH" firstAttribute="centerX" secondItem="l5V-5I-atj" secondAttribute="centerX" id="o70-kE-7f4"/>
+                            <constraint firstItem="kHr-4C-Pb5" firstAttribute="top" secondItem="e7N-0w-ZvK" secondAttribute="bottom" constant="20" id="oyF-k2-MDL"/>
                             <constraint firstItem="Ito-1p-PFH" firstAttribute="top" secondItem="IQN-vG-WSS" secondAttribute="bottom" constant="10.5" id="pCK-I8-7gJ"/>
+                            <constraint firstItem="2uL-gv-kWo" firstAttribute="trailing" secondItem="F3f-72-Neu" secondAttribute="trailing" id="pze-t1-hsh"/>
+                            <constraint firstItem="2uL-gv-kWo" firstAttribute="bottom" secondItem="F3f-72-Neu" secondAttribute="bottom" id="t9E-bL-EpS"/>
                             <constraint firstItem="e7N-0w-ZvK" firstAttribute="top" secondItem="V54-gK-Q9U" secondAttribute="bottom" constant="20" id="tKX-9E-Kt3"/>
-                            <constraint firstItem="kHr-4C-Pb5" firstAttribute="top" secondItem="e7N-0w-ZvK" secondAttribute="bottom" constant="12" id="zwZ-bl-cv2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2uL-gv-kWo"/>
                     </view>

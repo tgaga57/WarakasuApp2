@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         // エフェクト定義
         warakasuLabel.morphingEffect = .evaporate
-        warakasuLabel.text = "aaaaa"
+        warakasuLabel.text = ""
         
     }
     
@@ -147,7 +147,7 @@ class LoginViewController: UIViewController {
     
     // エラーが返ってきた場合のアラート
     func showErrorAlert(error: Error?)  {
-        let alert = UIAlertController(title: "エラー", message: "error?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "エラーです", message: "error?", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .cancel)
         alert.addAction(okAction)
         // 表示
