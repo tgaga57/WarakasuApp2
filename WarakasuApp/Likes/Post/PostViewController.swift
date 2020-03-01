@@ -53,6 +53,7 @@ class PostViewController: UIViewController {
     @IBOutlet weak var uploadButton: UIButton!
     // 動画内容のコメント
     @IBOutlet weak var commentTextView: UITextView!
+    
     // filename
     var fileName: String?
     
@@ -80,7 +81,6 @@ class PostViewController: UIViewController {
         default:
             break
         }
-        
         // videopathの確認
         print(videoPath)
     }
@@ -95,6 +95,7 @@ class PostViewController: UIViewController {
             let decodedImage = UIImage(data: dataImage! as Data)
             // profileImageViewに代入
             profileImageView.image = decodedImage
+            
         } else {
             // なければアイコン画像をいれておく
             profileImageView.image = #imageLiteral(resourceName: "宇宙人アイコン")
@@ -131,7 +132,6 @@ class PostViewController: UIViewController {
             videoPicker.delegate = self
             // 画面遷移
             self.present(videoPicker, animated: true)
-            
         }
     }
     
@@ -166,7 +166,6 @@ class PostViewController: UIViewController {
         } else {
             print("エラー")
         }
-        
         // 画面を消す
         self.dismiss(animated: true)
     }
@@ -224,6 +223,7 @@ extension PostViewController:  UIImagePickerControllerDelegate, UINavigationCont
         print(videoURL)
         print(filename)
         uploadVideo(url: videoURL, fileName: filename) {
+            
             // 動画が投稿が選択されたらbuttonのimageを入れ替える!
             self.uploadButton.setImage(self.image0, for: .normal)
             self.uploadButton.isEnabled = false
@@ -232,7 +232,7 @@ extension PostViewController:  UIImagePickerControllerDelegate, UINavigationCont
             let title = "動画の投稿が完了しました"
             let message = ""
             let okText = "OK"
-            
+            // アラート
             let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
             let okayButton = UIAlertAction(title: okText, style: UIAlertAction.Style.cancel, handler: nil)
             alert.addAction(okayButton)

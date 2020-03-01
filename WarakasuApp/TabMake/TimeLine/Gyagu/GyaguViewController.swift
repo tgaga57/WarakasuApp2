@@ -90,11 +90,13 @@ class GyaguViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
         refreshControl.endRefreshing()
     }
     
+    
     // セルの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // セルの数は投稿情報の数
         return items.count
     }
+    
     
     // セルの設定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

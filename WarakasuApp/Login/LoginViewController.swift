@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
     // 上位部分のラベル
     @IBOutlet weak var warakasuLabel: LTMorphingLabel!
     
+    var user = "Taiga"
     //表示制御用タイマー
     private var timer: Timer?
     //String配列のindex用
@@ -50,7 +51,7 @@ class LoginViewController: UIViewController {
         
         timer?.invalidate()
     }
-    
+    // 文字の
     @objc func update(timer: Timer) {
         //ここでtextの更新
         warakasuLabel.text = textList[index]
@@ -97,6 +98,7 @@ class LoginViewController: UIViewController {
         })
     }
     
+    
     // ログインボタン
     @IBAction func loginbutton(_ sender: TransitionButton) {
         // emailとパスワードにnilが入っていないかを確認
@@ -137,10 +139,12 @@ class LoginViewController: UIViewController {
     
     // タイムラインへの関数
     func toTimeLine() {
-        // storyboardのfileの特定
+        // storyboardのfileの特定 同じストーリーボード内にいないから
         let storyboard: UIStoryboard = UIStoryboard(name: "TabMake", bundle: nil)
         // 移動先のvcをインスタンス化
-        let vc = storyboard.instantiateViewController(withIdentifier: "Tab")
+        let vc = storyboard.instantiateViewController(withIdentifier: "Tab") as! TabBarController
+        vc.userName = user
+        vc.modalPresentationStyle = .fullScreen
         // 遷移処理
         self.present(vc, animated: true)
     }

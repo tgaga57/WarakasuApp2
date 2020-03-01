@@ -49,6 +49,7 @@ class MypageViewController: UIViewController,UITextFieldDelegate, UIImagePickerC
         }
     }
     
+    
     // プロフ写真変更用アクション
     @IBAction func changeProfPhoto(_ sender: Any) {
         // アクションシート
@@ -100,6 +101,8 @@ class MypageViewController: UIViewController,UITextFieldDelegate, UIImagePickerC
         }
         // 画像がプロフに反映される
         picker.dismiss(animated: true)
+        
+        
     }
     
     // 決定ボタン

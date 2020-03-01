@@ -10,10 +10,17 @@ import UIKit
 
 class TabBarController: UITabBarController {
 
+    var userName:String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
+        print(userName)
         // Do any additional setup after loading the view.
     }
 
+    func toseni() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "Timeline") as! TimeLineViewController
+       
+    }
 }

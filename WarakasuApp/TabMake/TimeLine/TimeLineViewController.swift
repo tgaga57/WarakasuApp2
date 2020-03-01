@@ -12,6 +12,7 @@ import FirebaseFirestore
 
 class TimeLineViewController: ButtonBarPagerTabStripViewController{
     
+    var userName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,7 @@ class TimeLineViewController: ButtonBarPagerTabStripViewController{
         // 遷移処理
         let storyboard: UIStoryboard = UIStoryboard(name: "Post", bundle: nil)
         let PostViewController = storyboard.instantiateViewController(withIdentifier: "Post") as! PostViewController
+        PostViewController.modalPresentationStyle = .fullScreen
         // タブのカテゴリーのidを渡す！　0＝一発ギャグ １＝ コント 2＝モノマネ
         PostViewController.categoryId = currentIndex
         self.present(PostViewController, animated: true, completion: nil)

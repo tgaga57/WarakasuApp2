@@ -17,7 +17,7 @@ class KontoViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
     // インスタンス化
     let db = Firestore.firestore()
     
-    // 更新のぐるぐる
+    // 更新
     let refreshControl = UIRefreshControl()
     
     // firebase Storage
@@ -44,13 +44,11 @@ class KontoViewController: UIViewController,IndicatorInfoProvider,UITableViewDel
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         // テーブルビューに追加
         tableView.addSubview(refreshControl)
-        
         // tableViewのデリゲート接続
         tableView.delegate = self
         tableView.dataSource = self
         // 名前、日時、コメント、動画、プロフ画像,降順に投稿
         fetch()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
